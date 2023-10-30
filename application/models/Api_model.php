@@ -8,8 +8,9 @@ class Api_model extends CI_model {
         parent::__construct(); 
         // 위에서 설정한 /application/config/database.php 파일에서 
         // $db['myDB'] 설정값을 불러오겠다는 뜻
-        $this->api_info = $this->load->database('ssnong', TRUE);
+        $this->load->database();
     } 
+
     
     /**
      * 2023-10-25
