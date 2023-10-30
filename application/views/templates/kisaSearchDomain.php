@@ -181,7 +181,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	var doc = document;
 	// kisa 인터넷 주소 - 도메인 이름/IP 정보 검색
 	var api_key = '<?php echo $auth_key?>';
-	console.log(api_key);
 
 	// 스피너 
 	let spinner = doc.getElementById('spinner');
@@ -205,12 +204,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		request_api.send();
 		request_api.onload = function () {
 
+			console.log(api_key);
 			var result = JSON.parse(request_api.response);
 
 			// 정상작동
 			var result_code = result.response.result.result_code;
-			console.log('result_code :', result_code);
-			console.log('type :', typeof(result_code));
+			// console.log('result_code :', result_code);
+			// console.log('type :', typeof(result_code));
 
 			if(result_code != '10000') {
 				setTimeout(() => {
