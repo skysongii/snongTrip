@@ -278,7 +278,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
         console.log(result.response.result);
         console.log(result.response.whois.krdomain.addr);
     };
-    alert(11);
 </script>
 
 </html>
