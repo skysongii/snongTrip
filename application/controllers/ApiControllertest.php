@@ -16,10 +16,12 @@ class ApiControllertest extends CI_Controller {
         // model('Api_model')에서 Api_model은 Api_model.php 파일을 찾겠다는 의미
         // $this->Api_model->test();는 로드된 Api_model.php에서 kisaDomainList 함수를 실행하겠다는 뜻
         // $this->load->model('Api_model');
-        // $data['row'] = $this->Api_model->kisaDomainList();
         // $this->Api_model->kisaDomainList();
         $this->load->model('Api_model');
-        $this->Api_model->kisaDomainList();
+        // $this->Api_model->kisaDomainList();
+        
+        
+        $data['row'] = $this->Api_model->kisaDomainList();
         $this -> load -> view('/templates/api_view', $data);
       }
     
