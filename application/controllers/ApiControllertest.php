@@ -19,7 +19,7 @@ class ApiControllertest extends CI_Controller {
         // $data['row'] = $this->Api_model->kisaDomainList();
         // $this->Api_model->kisaDomainList();
         $this->load->model('Main_model');
-        $this->Api_model-->kisaDomainList();
+        $this->Api_model->kisaDomainList();
         // $this -> load -> view('/templates/api_view', $data);
       }
     
