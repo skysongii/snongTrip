@@ -228,7 +228,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             location.href = '/WhoisController';
         }, 2000);
         var element = document.getElementById('change-typed')
-        element.innerHTML = '<h2 id="change-typed" class="blink">  인터넷진흥원 API 페이지로 이동합니다</h2>';
+        element.innerHTML = '<h2 id="change-typed" class="blink">  Open API 페이지로 이동합니다</h2>';
     }
 
     // WDQ페이지 이동
