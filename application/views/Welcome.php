@@ -73,7 +73,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </header><!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <section id="hero" class="d-flex flex-column justify-content-center align-items-center content">
         <div class="hero-container" data-aos="fade-in">
             <h1 id="change-typed">어떤 곳인가요? </h1>
             <p><span id="typed" class="typed" data-typed-items="비개발자를 위한 OpenAPI 활용공간입니다., 원하시는 메뉴를 클릭해주세요."></span></p>
@@ -83,7 +83,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <main id="main">
 
         <!-- ======= About Section ======= -->
-        <section id="about" class="about">
+        <section id="about" class="about content">
             <div class="container">
 
                 <div class="section-title">
@@ -260,25 +260,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
         element.innerHTML = '<h1 id="change-typed" class="blink"> &nbsp; 곧 기관메타 페이지로 이동합니다</h1>';
     }
 
+
+    var $html = $("html");
+    var page = 1;
+    var lastPage = $(".content").length;
+
+    $html.animate({scrollTop:0},10);
+
     $(window).on("wheel", function(e) {
 
         console.log(1);
-        // if ($html.is(":animated")) return;
+        if ($html.is(":animated")) return;
 
-        // if (e.originalEvent.deltaY > 0) {
-        //     if (page == lastPage) return;
+        if (e.originalEvent.deltaY > 0) {
+            if (page == lastPage) return;
 
-        //     page++;
-        // } else if (e.originalEvent.deltaY < 0) {
-        //     if (page == 1) return;
+            page++;
+        } else if (e.originalEvent.deltaY < 0) {
+            if (page == 1) return;
 
-        //     page--;
-        // }
-        // var posTop = (page - 1) * $(window).height();
+            page--;
+        }
+        var posTop = (page - 1) * $(window).height();
 
-        // $html.animate({
-        //     scrollTop: posTop
-        // });
+        $html.animate({
+            scrollTop: posTop
+        });
 
     });
 </script>
