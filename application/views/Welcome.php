@@ -90,7 +90,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 <div class="section-title">
                     <h2>About</h2>
-                    <p>우리는 그 어떤 이름도 없는 익명의 사람들이며 단순히 편리함을 추구하기 위해 만들어졌습니다.</p>
+                    <p>나는 쓰농입니다.</p>
                 </div>
 
                 <div class="row">
@@ -108,7 +108,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>23
                                             September 1995</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                        <span>www.snong.store</span></li>
+                                        <a href="https://github.com/skysongii?tab=repositories">https://github.com/skysongii?tab=repositories</a></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>010 8630
                                             9414</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Naju, South
