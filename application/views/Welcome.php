@@ -62,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>누가 만들었나요?</span></a>
                     </li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="goWhois();"><i class="bx bx-file-blank"></i>
-                            <span>인터넷진흥원</span></a></li>
+                            <span>Open API</span></a></li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="goWDQ();"><i class="bx bx-book-content"></i>
                             <span>준비중</span></a></li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="goAllData();"><i class="bx bx-server"></i>
@@ -222,7 +222,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </body>
 
 <script>
-    // 코러스 페이지 이동
+    // Open API 이동
     function goWhois() {
         setTimeout(() => {
             location.href = '/WhoisController';
@@ -266,18 +266,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
      *  2023-10-16
      *  CSH
      * */
-    var request_api = new XMLHttpRequest();
-    var api_key = 't9wAtGTMnYg3JQzTH3Kw9DgKa0AchUskQlTdyPwP14uON8mGLDb00arKBlzl6xU8LUNXnmF4ornGPQRvpeQlMw%3D%3D';
-    request_api.open('GET', 'http://apis.data.go.kr/B551505/whois/domain_name?serviceKey=' + api_key + '&query=kisa.or.kr&answer=json')
-    request_api.send();
-    request_api.onload = function () {
-        var result = JSON.parse(request_api.response);
+    // var request_api = new XMLHttpRequest();
+    // var api_key = 't9wAtGTMnYg3JQzTH3Kw9DgKa0AchUskQlTdyPwP14uON8mGLDb00arKBlzl6xU8LUNXnmF4ornGPQRvpeQlMw%3D%3D';
+    // request_api.open('GET', 'http://apis.data.go.kr/B551505/whois/domain_name?serviceKey=' + api_key + '&query=kisa.or.kr&answer=json')
+    // request_api.send();
+    // request_api.onload = function () {
+    //     var result = JSON.parse(request_api.response);
 
-        console.log(result);
-        console.log(result.response);
-        console.log(result.response.result);
-        console.log(result.response.whois.krdomain.addr);
-    };
+    //     console.log(result);
+    //     console.log(result.response);
+    //     console.log(result.response.result);
+    //     console.log(result.response.whois.krdomain.addr);
+    // };
 </script>
 
 </html>
