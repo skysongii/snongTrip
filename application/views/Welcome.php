@@ -261,6 +261,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
     }
 
 
+    window.addEventListener("wheel", function(e){
+	e.preventDefault();
+    },{passive : false});
+
     var $html = $("html");
     var page = 1;
     var lastPage = $(".content").length;
