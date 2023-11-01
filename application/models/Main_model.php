@@ -10,7 +10,7 @@ class Main_model extends CI_model {
         // 위에서 설정한 /application/config/database.php 파일에서 
         // $db['myDB'] 설정값을 불러오겠다는 뜻
         // $this->db = $this->load->database('ssnong', TRUE);
-        $this->load->database();
+        $this->load->database('ssnong');
 
     } 
     
