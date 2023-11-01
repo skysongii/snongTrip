@@ -25,9 +25,13 @@ class Api_model extends CI_model {
                     api_url au LEFT JOIN api_authkey aa ON au.idx = aa.idx
                 WHERE
                     au.idx = 1";
-        $query = $this->api_info->query($sql);
-
-        $result = $query->result();
+        $result = $this->db->query($sql)->result();
+        $this->db->close();
+        // $result = $query->result();
         return $result;
     }
+
+    // $result = $this->db->query('SELECT id, name FROM members')->result();
+    // $this->db->close();
+
 }
