@@ -57,7 +57,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a href="/Welcome" class="active">Home</a></li>
+                    <li><a href="/WhoisController" class="active">Home</a></li>
                     <!-- <li class="dropdown"><a href="#"><span>OpenAPI</span> <i
                                 class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
@@ -78,7 +78,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </ul>
                     </li> -->
                     <!-- <li><a href="services.html">Services</a></li> -->
-                    <li><a href="./index.html">GO KRC NAVI</a></li>
+                    <li><a href="/Welcome">GO KRC NAVI</a></li>
                 </ul>
             </nav><!-- .navbar -->
 

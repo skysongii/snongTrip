@@ -96,7 +96,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</ul>
 					</li>
 					<li><a href="services.html">Services</a></li> -->
-					<li><a href="./index.html">GO KRC NAVI</a></li>
+					<li><a href="/Welcome">GO KRC NAVI</a></li>
 				</ul>
 			</nav><!-- .navbar -->
 
@@ -170,6 +170,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 	<script src="assets/vendor/aos/aos.js"></script>
 	<script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 	<!-- Template Main JS File -->
 	<script src="assets/js/main-photo.js"></script>
@@ -181,7 +182,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	var doc = document;
 	// kisa 인터넷 주소 - 도메인 이름/IP 정보 검색
 	var api_key = '<?php echo $auth_key?>';
+	console.log(api_key);
 
+	
 	// 스피너 
 	let spinner = doc.getElementById('spinner');
 	spinner.style.visibility = 'hidden';
@@ -204,7 +207,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		request_api.send();
 		request_api.onload = function () {
 
-			console.log(api_key);
 			var result = JSON.parse(request_api.response);
 
 			// 정상작동

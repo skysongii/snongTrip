@@ -242,7 +242,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     $(window).on("wheel", function(e) {
 
-        console.log(1);
         if ($html.is(":animated")) return;
 
         if (e.originalEvent.deltaY > 0) {
