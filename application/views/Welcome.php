@@ -44,7 +44,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="d-flex flex-column">
 
             <div class="profile">
-                <img src="./assets/img/KRC-CI.jpg" alt="" class="img-fluid rounded-circle">
+                <img src="./assets/img/ssnong-CI.png" alt="" class="img-fluid rounded-circle">
                 <h1 class="text-light"><a href="index.html">한국농어촌공사<br> 바로가기 서비스</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
