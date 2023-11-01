@@ -139,7 +139,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </section><!-- End About Section -->
 
         <!-- ======= Facts Section ======= -->
-        <section id="facts" class="facts">
+        <section id="facts" class="facts content">
             <div class="container">
 
                 <div class="section-title">
