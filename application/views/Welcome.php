@@ -108,7 +108,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>23
                                             September 1995</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                        <a href="https://github.com/skysongii?tab=repositories" onclick="window.open(this.href,'_blank'); return false;">스농이 gitHub</a></li>
+                                        <a href="https://github.com/skysongii" onclick="window.open(this.href,'_blank'); return false;">스농이 gitHub</a></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>010 8630
                                             9414</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Naju, South
