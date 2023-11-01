@@ -17,9 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
@@ -108,7 +106,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>23
                                             September 1995</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                        <a href="https://github.com/skysongii" onclick="window.open(this.href,'_blank'); return false;">스농이 gitHub</a></li>
+                                        <a href="https://github.com/skysongii" onclick="window.open(this.href,'_blank'); return false;">스농이 gitHub</a>
+                                    </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>010 8630
                                             9414</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Naju, South
@@ -119,11 +118,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <ul>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>28</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong>
-                                        <span>Bachelor</span></li>
+                                        <span>Bachelor</span>
+                                    </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong>
-                                        <span>tjsgh9414@naver.com</span></li>
+                                        <span>tjsgh9414@naver.com</span>
+                                    </li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
-                                        <span>Available</span></li>
+                                        <span>Available</span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -150,18 +152,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
                         <div class="count-box">
                             <i class="bi bi-emoji-smile"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1"
-                                class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
                             <p><strong>LoL Tier</strong> Emerald</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="count-box">
                             <i class="bi bi-journal-richtext"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
-                                class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
                             <p><strong> Partners Project Ranking Project Realestate Project System establish</strong>
                                 Others···</p>
                         </div>
@@ -202,8 +201,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
     </footer><!-- End  Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -261,23 +259,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
         element.innerHTML = '<h1 id="change-typed" class="blink"> &nbsp; 곧 기관메타 페이지로 이동합니다</h1>';
     }
 
-    /**
-     *  인터넷진흥원 인터넷주소 - 도메인 이름 / IP 정보 검색
-     *  2023-10-16
-     *  CSH
-     * */
-    // var request_api = new XMLHttpRequest();
-    // var api_key = 't9wAtGTMnYg3JQzTH3Kw9DgKa0AchUskQlTdyPwP14uON8mGLDb00arKBlzl6xU8LUNXnmF4ornGPQRvpeQlMw%3D%3D';
-    // request_api.open('GET', 'http://apis.data.go.kr/B551505/whois/domain_name?serviceKey=' + api_key + '&query=kisa.or.kr&answer=json')
-    // request_api.send();
-    // request_api.onload = function () {
-    //     var result = JSON.parse(request_api.response);
+    $(window).on("wheel", function(e) {
 
-    //     console.log(result);
-    //     console.log(result.response);
-    //     console.log(result.response.result);
-    //     console.log(result.response.whois.krdomain.addr);
-    // };
+        console.log(1);
+        // if ($html.is(":animated")) return;
+
+        // if (e.originalEvent.deltaY > 0) {
+        //     if (page == lastPage) return;
+
+        //     page++;
+        // } else if (e.originalEvent.deltaY < 0) {
+        //     if (page == 1) return;
+
+        //     page--;
+        // }
+        // var posTop = (page - 1) * $(window).height();
+
+        // $html.animate({
+        //     scrollTop: posTop
+        // });
+
+    });
 </script>
 
 </html>
