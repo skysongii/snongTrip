@@ -105,7 +105,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<section id="gallery" class="gallery">
 			<div class="container-fluid">
 
-				<div class="row gy-4 justify-content-center">
+				<!-- Example single danger button -->
+				<div class="btn-group">
+					<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						Action
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Action</a></li>
+						<li><a class="dropdown-item" href="#">Another action</a></li>
+						<li><a class="dropdown-item" href="#">Something else here</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#">Separated link</a></li>
+					</ul>
+				</div>
+				<!-- <div class="row gy-4 justify-content-center">
 					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="gallery-item h-100" onclick="goKisaIEInfo();">
 							<h3 style="text-align: center;"><br>KISA <br>인터넷주소 <br>정보 검색 서비스</h3>
@@ -113,7 +128,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- <div class="col-xl-3 col-lg-4 col-md-6">
 					<div class="gallery-item h-100" onclick="location.href='./exchange_service.html'">
 						<h3 style="text-align: center;"><br>한국수출입은행 <br>환율 검색 서비스</h3>
