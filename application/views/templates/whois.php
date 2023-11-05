@@ -107,7 +107,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row gy-4 justify-content-center">
 					<div class="col-xl-3 col-lg-4 col-md-6">
 						<div class="gallery-item h-100" onclick="goKisaIEInfo();">
-							<h3 style="text-align: center;">인터넷진흥원</h3>
+							<h3 style="text-align: center;">(임시)인터넷진흥원</h3>
 							<div class="gallery-links d-flex align-items-center justify-content-center">
 							</div>
 						</div>
