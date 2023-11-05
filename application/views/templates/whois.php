@@ -164,6 +164,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	function goKisaIEInfo() {
 		location.href = '/KisaController';
 	}
+	
+	let goKisa = () => {
+		
+	}
 </script>
 
 </html>
