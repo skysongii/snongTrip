@@ -124,7 +124,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 		</section><!-- End Gallery Section -->
 
-	</main><!-- End #main -->
+	</main><!-- End #main section -->
 
 	<!-- ======= Footer ======= -->
 	<footer id="footer" class="footer">
