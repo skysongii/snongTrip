@@ -26,6 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- <div>ㅇㅇ</div>
 
     <!-- Template Main CSS File -->
     <link href="./assets/css/style.css" rel="stylesheet">
@@ -45,11 +46,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <img src="./assets/img/ssnong-CI.png" alt="" class="img-fluid rounded-circle">
                 <h1 class="text-light"><a href="index.html">스농이네<br> 싱기한 서비스</a></h1>
                 <div class="social-links mt-3 text-center">
-                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
+                    <a href="#" class="Login-button">로그인</a>
+                    <a href="#" class="Login-button">회원가입</a>
+                    <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
+                    <!-- <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                     <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
                 </div>
             </div>
 

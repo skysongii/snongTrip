@@ -108,7 +108,7 @@ h6 {
 }
 
 #header .profile .social-links a {
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
   background: #212431;
   color: #fff;
@@ -117,9 +117,10 @@ h6 {
   margin-right: 4px;
   border-radius: 50%;
   text-align: center;
-  width: 36px;
+  width: 30%;
   height: 36px;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 #header .profile .social-links a:hover {
@@ -1114,4 +1115,14 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+
+/*--------------------------------------------------------------
+# 개인추가
+-------------------------------------------------------------*/
+
+.Login-button {
+  /* margin-left:20%;
+  margin-top: 20%;; */
 }
