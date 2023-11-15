@@ -226,7 +226,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <script>
 
-
+    $(function() {
+        console.log('test');
+    });
     /**
      * 2023-11-01
      * @author : csh
