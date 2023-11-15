@@ -7,6 +7,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <!-- https 사이트에서 http 요청 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <title>KRC 바로가기 서비스</title>
     <meta content="" name="description">
