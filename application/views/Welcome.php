@@ -226,9 +226,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <script>
 
-    $(function() {
-        console.log('test');
-    });
+    if (typeof jQuery == 'undefined') {
+        alert("작동 안된다");
+    }else{
+        alert("작동 잘되네");
+    };
+
     /**
      * 2023-11-01
      * @author : csh
