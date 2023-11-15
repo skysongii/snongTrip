@@ -237,15 +237,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	e.preventDefault();
     },{passive : false});
 
-    var $html = $("html");
+    var mhtml = $("html");
     var page = 1;
     var lastPage = $(".content").length;
 
-    $html.animate({scrollTop:0},10);
+    mhtml.animate({scrollTop:0},10);
 
     $(window).on("wheel", function(e) {
 
-        if ($html.is(":animated")) return;
+        if (mhtml.is(":animated")) return;
 
         if (e.originalEvent.deltaY > 0) {
             if (page == lastPage) return;
@@ -258,7 +258,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }
         var posTop = (page - 1) * $(window).height();
 
-        $html.animate({
+        mhtml.animate({
             scrollTop: posTop
         });
 
