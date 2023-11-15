@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    
+
     <!-- https 사이트에서 http 요청 -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
@@ -228,12 +228,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </body>
 
 <script>
-
-    if (typeof jQuery == 'undefined') {
-        alert("작동 안된다");
-    }else{
-        alert("작동 잘되네");
-    };
 
     /**
      * 2023-11-01
