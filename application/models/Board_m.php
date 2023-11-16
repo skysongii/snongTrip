@@ -15,6 +15,7 @@ class Board_m extends CI_Model {
         $query = $this -> db -> query($sql);
         $result = $query -> result();
         // $result = $query -> result_array();
+        $this->db->close();
 
         return $result;
     }
