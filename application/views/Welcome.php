@@ -68,7 +68,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <li><a href="#hero" class="nav-link scrollto" onclick="goWhois();"><i class="bx bx-file-blank"></i>
                             <span>Open API</span></a></li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="readyToPage();"><i class="bx bx-book-content"></i>
-                            <span>준비중</span></a></li>
+                            <span>자유게시판</span></a></li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="readyToPage();"><i class="bx bx-server"></i>
                             <span>준비중...</span></a></li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="readyToPage();"><i class="bx bx-envelope"></i>
