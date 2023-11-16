@@ -67,7 +67,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="goWhois();"><i class="bx bx-file-blank"></i>
                             <span>Open API</span></a></li>
-                    <li><a href="#hero" class="nav-link scrollto" onclick="readyToPage();"><i class="bx bx-book-content"></i>
+                    <li><a href="#hero" class="nav-link scrollto" onclick="goBoard();"><i class="bx bx-book-content"></i>
                             <span>자유게시판</span></a></li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="readyToPage();"><i class="bx bx-server"></i>
                             <span>준비중...</span></a></li>
@@ -220,6 +220,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <script src="./assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="./assets/vendor/php-email-form/validate.js"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- 페이지 리다이렉트 js 파일 -->
     <script src="./assets/js/page-redirect.js"></script>
 
     <!-- Template Main JS File -->
