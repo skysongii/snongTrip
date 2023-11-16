@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       }
 
     /**
-    * 주소에서 메서드가 생략되었을 때 실행되는 기본 메서드
+    * 주소에서 메서드가 생략되었을 때 실행되는 기본 메서드 -> lists 함수 호출
     */
     public function index() {
        $this -> lists();
