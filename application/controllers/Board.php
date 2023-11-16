@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 
     public function lists() {
-        $data['list'] = $this -> board_m -> get_list();
+        $data['list'] = $this -> Board_m -> get_list();
         $this -> load -> view('board/list_v', $data);
     }
  }
