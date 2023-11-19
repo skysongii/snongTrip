@@ -8,8 +8,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  class Board extends CI_Controller {
     function __construct() {       
         parent::__construct();
+
         $this -> load -> database();
-        $this -> load -> model('board_model');
+        $this -> load -> model('board_m');
         $this -> load -> helper(array('url', 'date'));
       }
 
@@ -26,14 +27,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      */
     public function _remap($method) {
         // 헤더 include
-        $this -> load -> view('header_v');
+        $this -> load -> view('board/header_v');
 
         if (method_exists($this, $method)) {
             $this -> {"{$method}"}();
         }
 
         // 푸터 include
-        $this -> load -> view('footer_v');
+        $this -> load -> view('board/footer_v');
     }
 
     public function lists() {
