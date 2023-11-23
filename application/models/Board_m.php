@@ -8,7 +8,7 @@ if (!defined('BASEPATH'))
 class Board_m extends CI_Model {
     function __construct() {
         parent::__construct();
-        // $this -> load -> database();
+        $this -> load -> database();
 
         // $this->load->database('ssnong');
 
@@ -18,6 +18,7 @@ class Board_m extends CI_Model {
         $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC";
         $query = $this -> db -> query($sql);
         $result = $query -> result();
+        echo $result;
         // $result = $query -> result_array();
         $this->db->close();
 
