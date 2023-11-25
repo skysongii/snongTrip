@@ -18,8 +18,8 @@ class Board_m extends CI_Model {
         $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC";
         $query = $this -> db -> query($sql);
         $result = $query -> result();
-        echo $result;
         // $result = $query -> result_array();
+        echo $result;
         $this->db->close();
 
         return $result;
