@@ -6,7 +6,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>                
-                <th scope="col">번호</th>
+                <th scope="col">순번</th>
                     <th scope="col">제목</th>
                     <th scope="col">작성자</th>            
                     <th scope="col">조회수</th>           
