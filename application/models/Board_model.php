@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 /**
  * 공통 게시판 모델
 */
-class Board_m extends CI_Model {
+class Board_model extends CI_Model {
     function __construct() {
         parent::__construct();
         $this -> load -> database('ssnong');
@@ -19,7 +19,7 @@ class Board_m extends CI_Model {
         $query = $this -> db -> query($sql);
         $result = $query -> result();
         // $result = $query -> result_array();
-        echo $result;
+        // echo $result;
         $this->db->close();
 
         return $result;

@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *  게시판 메인 컨트롤러
  */
 
- class Board extends CI_Controller {
+ class BoardController extends CI_Controller {
     function __construct() {       
         parent::__construct();
 
@@ -24,22 +24,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     /**
      * 사이트 헤더, 푸터 자동 추가
      */
-    // public function _remap($method) {
-    //     // 헤더 include
-    //     $this -> load -> view('board/header_v');
+    public function _remap($method) {
+        // 헤더 include
+        $this -> load -> view('board/header_v');
 
-    //     if (method_exists($this, $method)) {
-    //         $this -> {"{$method}"}();
-    //     }
+        if (method_exists($this, $method)) {
+            $this -> {"{$method}"}();
+        }
 
-    //     // 푸터 include
-    //     $this -> load -> view('board/footer_v');
-    // }
+        // 푸터 include
+        $this -> load -> view('board/footer_v');
+    }
 
     public function lists() {
         // $this -> load -> helper(array('url', 'date'));
-        $this -> load -> model('Board_m');
-        $data['list'] = $this -> Board_m -> get_list();
+        $this -> load -> model('Board_model');
+        $data['list'] = $this -> Board_model -> get_list();
 
         $this -> load -> view('board/list_v', $data);
     }
