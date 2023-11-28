@@ -8,6 +8,19 @@
     <title>CodeIgniter</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link type="text/css" rel='stylesheet' href="/todo/include/css/bootstrap.css" />
+
+    <script>
+        $(function () {
+            $("#search_btn").click(function() {
+                if ($("#q").val() == '') {
+                    alert("검색어를 입력하세요,");
+                    return false;
+                } else {
+                    // var act = "/board/"
+                }
+            }
+        });
+    </script>
 </head>
 
 <body>
