@@ -15,8 +15,8 @@ class Board_model extends CI_Model {
     }
 
     function get_list($table = 'ci_board') {
-        // $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC";
-        $sql = "SELECT * FROM ci_board ORDER BY board_id desc";
+        $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC";
+        // $sql = "SELECT * FROM ci_board ORDER BY board_id desc";
         $query = $this -> db -> query($sql);
         $result = $query -> result();
         // $result = $query -> result_array();
