@@ -8,8 +8,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  class BoardController extends CI_Controller {
     function __construct() {       
         parent::__construct();
-
-        // $this -> load -> database();
+        $this -> load -> database('ssnong');
+        $this -> laod -> model('Board_model');
+        $this -> laod -> helper(array('url', 'date'));
 
       }
 

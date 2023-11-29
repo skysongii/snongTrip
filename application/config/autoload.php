@@ -90,7 +90,9 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 |	원본 $autoload['helper'] = array();
 */
-$autoload['helper'] = array('date');
+
+// $autoload['helper'] = array('date');
+$autoload['helper'] = array();
 
 /*
 | -------------------------------------------------------------------
