@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         parent::__construct();
         $this -> load -> database('ssnong');
         $this -> load -> model('Board_model');
-        $this -> laod -> helper(array('url', 'date'));
+        $this -> load -> helper(array('url', 'date'));
 
       }
 
