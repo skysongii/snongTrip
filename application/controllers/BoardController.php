@@ -73,5 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         $data['list'] = $this -> Board_model -> get_list($this -> uri -> segment(3), '', $start, $limit);
         // $this -> load -> view('board/list_v', $data);
+        // $this -> load -> view('board/list_v', $data);
+
     }
  }
