@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this -> load -> library('pagination');
 
         // 페이지 네이션 설정
-        $config['base_url'] = '/BoardController/ci_board/page';
+        $config['base_url'] = '/BoardController/page';
 
         // 페이징 주소
         $config['total_rows'] = $this -> Board_model -> get_list($this -> uri -> segment(3), 'count');
