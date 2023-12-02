@@ -22,7 +22,7 @@ let goWhois = () => {
 
 let goBoard = () => {
     setTimeout(() => {
-        location.href = '/BoardController';
+        location.href = '/BoardController/page';
         console.log("준비중입니다!");
     }, 0);
     var element = document.getElementById('change-typed')
