@@ -12,13 +12,25 @@ class Board_model extends CI_Model {
 
     }
 
-    function get_list($table = 'ci_board') {
-        $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC";
-        // $sql = "SELECT * FROM ci_board ORDER BY board_id desc";
+    function get_list($table = 'ci_board', $type = '', $offset = '', $limit = '') {
+        $limit_query = '';
+
+        if ($limit != '' OR $offset != '') {
+            // 페이징이 있을 경우
+            $limit_query = ' LIMIT ' . $offset . ', ' . $limit;
+
+        }
+
+
+        $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC" . $limit_query;
         $query = $this -> db -> query($sql);
-        $result = $query -> result();
-        // $result = $query -> result_array();
-        // echo $result;
+
+        if ($type == 'count') {
+            $result = $query -> num_rows();
+        } else {
+            $result = $query -> result();
+        }
+
         $this->db->close();
 
         return $result;
