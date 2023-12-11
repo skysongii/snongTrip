@@ -14,7 +14,7 @@ class Board_model extends CI_Model {
 
     function get_list($table = 'ci_board', $type = '', $offset = '', $limit = '') {
         $limit_query = '';
-        exit;
+        
         if ($limit != '' OR $offset != '') {
             // 페이징이 있을 경우
             $limit_query = ' LIMIT ' . $offset . ', ' . $limit;
