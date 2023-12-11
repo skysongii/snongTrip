@@ -21,7 +21,7 @@ class Board_model extends CI_Model {
             $limit_query = ' LIMIT ' . $offset . ', ' . $limit;
         }
 
-        $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC";
+        $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC" . $limit_query;
         $query = $this -> db -> query($sql);
 
         $result = $query -> result();
