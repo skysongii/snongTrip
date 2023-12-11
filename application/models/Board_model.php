@@ -15,13 +15,14 @@ class Board_model extends CI_Model {
     function get_list($table = 'ci_board', $type = '', $offset = '', $limit = '') {
     // function get_list($table = 'ci_board') {
         $limit_query = '';
-
+        echo $table;
+        exit;
         if ($limit != '' OR $offset != '') {
             // 페이징이 있을 경우
             $limit_query = ' LIMIT ' . $offset . ', ' . $limit;
         }
 
-        $sql = "SELECT  * FROM ".$table." ORDER BY board_id DESC" . $limit_query;
+        $sql = "SELECT  * FROM " . $table . " ORDER BY board_id DESC" . $limit_query;
         $query = $this -> db -> query($sql);
 
         $result = $query -> result();
