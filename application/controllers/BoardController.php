@@ -25,12 +25,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     /**
      * 사이트 헤더, 푸터 자동 추가
      */
-    public function _remap($method) {
+    public function _remap($method, $params = array()) {
         // 헤더 include
         $this -> load -> view('board/header_v');
 
+        // 클래스에 해당 메소드가 없으면 출력하지 않도록
         if (method_exists($this, $method)) {
-            $this -> {"{$method}"}();
+
+            call_user_func_array(array($this, $method), $params);
+            // $this -> {"{$method}"}();
         }
 
         // 푸터 include

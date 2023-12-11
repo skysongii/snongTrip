@@ -8,15 +8,12 @@ if (!defined('BASEPATH'))
 class Board_model extends CI_Model {
     function __construct() {
         parent::__construct();
-        $this->load->database('ssnong');
+        // $this->load->database('ssnong');
 
     }
 
     function get_list($table = 'ci_board', $type = '', $offset = '', $limit = '') {
-    // function get_list($table = 'ci_board') {
         $limit_query = '';
-        echo "asdas";
-        echo $table;
         exit;
         if ($limit != '' OR $offset != '') {
             // 페이징이 있을 경우
