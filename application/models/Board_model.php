@@ -15,6 +15,7 @@ class Board_model extends CI_Model {
     function get_list($table = 'ci_board', $type = '', $offset = '', $limit = '') {
     // function get_list($table = 'ci_board') {
         $limit_query = '';
+        echo "asdas";
         echo $table;
         exit;
         if ($limit != '' OR $offset != '') {
