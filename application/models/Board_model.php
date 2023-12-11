@@ -31,8 +31,6 @@ class Board_model extends CI_Model {
             $result = $query -> result();
         }
 
-        $this->db->close();
-
         return $result;
     }
 }
