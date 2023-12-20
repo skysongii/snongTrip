@@ -231,7 +231,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				var result_addr; 
 
 				console.log(result.response);
-				// 1.3초 후 api 요청
+				// 1.3초 후 api 요청 - 요청하는 동안 스피너
 				setTimeout(() => {
 					result_addr = result.response.whois.krdomain.addr;
 					api_result.innerHTML = '<p class="text-primary">reusult_code : ' + result_code + '<br>result_msg : ' + result_msg;
