@@ -195,7 +195,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	// var api_result_innerHTML = api_result.innerHTML;
 	api_result.style.visibility = 'hidden';
 
-	// 도메인 입력란 value
+	// 도메인 입력란 - 엔터 혹은 검색 클릭 시 입력한 도메인 URL VALUE값을 가지고 옴
 	function go_req() {
 		var request_api = new XMLHttpRequest();
 		var req_domain = doc.getElementById('search-domain').value;
