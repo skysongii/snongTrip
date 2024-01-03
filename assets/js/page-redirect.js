@@ -30,6 +30,35 @@ let goBoard = () => {
     element.innerHTML = '<h2 id="change-typed" class="blink">  자유게시판 페이지로 이동합니다</h2>';
 }
 
+/**
+ * 2023-1-3
+ * @author -> csh
+ * 국내여행 리다이렉트
+ */
+
+let domesticTrip = () => {
+    setTimeout(() => {
+        location.href = '/BoardController/page';
+    }, 0);
+    var element = document.getElementById('change-typed')
+    element.innerHTML = '<h2 id="change-typed" class="blink">  자유게시판 페이지로 이동합니다</h2>';
+}
+
+
+/**
+ * 2024-1-3
+ * @author -> csh
+ * 해외여행 리다이렉트
+ */
+
+let overseasTrip = () => {
+    setTimeout(() => {
+        location.href = '/BoardController/page';
+    }, 0);
+    var element = document.getElementById('change-typed')
+    element.innerHTML = '<h2 id="change-typed" class="blink">  자유게시판 페이지로 이동합니다</h2>';
+}
+
 
 
 /**

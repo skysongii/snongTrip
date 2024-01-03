@@ -69,10 +69,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <span>Open API</span></a></li>
                     <li><a href="#hero" class="nav-link scrollto" onclick="goBoard();"><i class="bx bx-book-content"></i>
                             <span>자유게시판</span></a></li>
-                    <li><a href="#hero" class="nav-link scrollto" onclick="readyToPage();"><i class="bx bx-server"></i>
-                            <span>준비중...</span></a></li>
-                    <li><a href="#hero" class="nav-link scrollto" onclick="readyToPage();"><i class="bx bx-envelope"></i>
-                            <span>준비중입니다...</span></a></li>
+                    <li><a href="#hero" class="nav-link scrollto" onclick="domesticTrip();"><i class="bx bx-server"></i>
+                            <span>국내여행</span></a></li>
+                    <li><a href="#hero" class="nav-link scrollto" onclick="overseasTrip();"><i class="bx bx-envelope"></i>
+                            <span>해외여행</span></a></li>
                 </ul>
             </nav><!-- .nav-menu -->
         </div>
