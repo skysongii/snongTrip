@@ -27,7 +27,7 @@ let kor_location =
 			period : '2023.10.14 ~ 2023.10.15',
 			contents : 
 			{
-				place : '녹차밭'
+				place : '을왕리 해수욕장'
 			}
 		}
 	],
@@ -39,10 +39,24 @@ let kor_location =
 			period : '2023.2.11 ~ 2023.2.12',
 			contents : 
 			{
-				place : '녹차밭'
+				place : '펜션...'
 			}
 		}
-	]
+	],
+	[
+		{
+			name : '전주',
+			lat	: '35.8187',
+			lng	: '127.1539',
+			period : '2023.2.11 ~ 2023.2.12',
+			contents : 
+			{
+				place 	: '한옥마을',
+				stay	: '비하녹'
+			}
+		}
+	],
+
 ]
 
 /**--------------------------------------------------------------------------------------- */
@@ -85,7 +99,7 @@ console.log("zoom:" + zoom);
 			title : kor_location[i][0].name,
 		});
 
-		let contentString = '<div style="width:100px; text-align:center;padding:10px;font-size:0.8rem;">'+ kor_location[i][0].name+'</div>';
+		let contentString = '<div id="info-content">'+ kor_location[i][0].name+'</div>';
 		
 		// 추가적인 속성
 		let infowindow = new naver.maps.InfoWindow({
@@ -110,7 +124,7 @@ console.log("zoom:" + zoom);
 
 		let title_name 	= infowindow.wrapper.innerText;
 		let period		= infowindow.period;
-		// let place		= infowindow.place;
+		let place		= infowindow.contents.place;
 
 		naver.maps.Event.addListener(marker, "click", function(e) {
 			console.log('marker :' , marker);
@@ -121,13 +135,20 @@ console.log("zoom:" + zoom);
 				infowindow.open(map, marker); // 클릭시 정보창 출력
 
 				// 마커 클릭 시 우측 글 변환
-				let location_name = document.getElementById("location-name");
-				let location_period = document.getElementById("location-period");
-				let location_lead = document.getElementById("lead");
+				let location_explain 	= document.getElementById("marker-explain");
+				let location_lead		= document.getElementById("lead");
+				let location_name 		= document.getElementById("location-name");
+				let location_period 	= document.getElementById("location-period");
+				let lead_place_q 		= document.getElementById("lead-place-q");
+				let lead_place_a 		= document.getElementById("lead-place-a");
 
-
-				location_name.innerText=title_name;
-				// location_period.innerText=place;
+				
+				location_explain.innerText	= "대한민국";
+				// location_lead.innerText		= "";
+				location_name.innerText		= title_name;
+				location_period.innerText	= period;
+				lead_place_q.innerText		= "장소 ";
+				lead_place_a.innerText		= place;
 
 			}
 		});

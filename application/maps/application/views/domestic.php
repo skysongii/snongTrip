@@ -51,12 +51,17 @@
                     <!-- <div id="map" class="col-md-6"></div> -->
                     <div class="col-md-6">
                         <div id="marker-explain" class="small mb-1">지도에서 궁금한 마커를 클릭</div>
-                        <h1 class="display-5 fw-bolder">대한민국</h1>
+                        <h1 id="location-name" class="display-5 fw-bolder">대한민국</h1>
                         <div class="fs-5 mb-5">
                             <!-- <span class="text-decoration-line-through">$45.00</span> -->
-                            <span id="location-name">기간</span>
+                            <span id="location-period">기간</span>
                         </div>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                        <p id="lead" class="lead">
+                            <a id="lead-place-q" class="lead"><a id="lead-place-a"></a></a><br>
+                            <a id="lead-stay-q" class="lead"><a id="lead-stay-a"></a></a><br>
+                        </p>
+                            
+                            
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
@@ -78,7 +83,7 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ksifq5x35r&callback=CALLBACK_FUNCTION"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="../../assets/js/navermaps.js"></script>
     </body>
 </html>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>

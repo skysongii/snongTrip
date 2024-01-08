@@ -10824,3 +10824,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+#info-content {
+  width: 100px;
+  background-color: #0a0a23;
+  color: #fff;
+  border: none;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  /* z-index: 10; */
+}
