@@ -147,7 +147,7 @@ console.log("zoom:" + zoom);
 				// location_lead.innerText		= "";
 				location_name.innerText		= title_name;
 				location_period.innerText	= period;
-				lead_place_q.innerText		= "장소 ";
+				lead_place_q.innerText		= "장소";
 				lead_place_a.innerText		= place;
 
 			}

@@ -56,8 +56,8 @@
                             <!-- <span class="text-decoration-line-through">$45.00</span> -->
                             <span id="location-period">기간</span>
                         </div>
-                        <p id="lead" class="lead">
-                            <a id="lead-place-q" class="lead"><a id="lead-place-a"></a></a><br>
+                        <p id="lead" class="lead">dd
+                            <a id="lead-place-q"><a id="lead-place-a"></a></a><br>
                             <a id="lead-stay-q" class="lead"><a id="lead-stay-a"></a></a><br>
                         </p>
                             
