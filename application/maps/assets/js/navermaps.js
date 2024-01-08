@@ -156,7 +156,7 @@ console.log("zoom:" + zoom);
 	for (var i=0, ii=markers.length; i<ii; i++) {
 
 		naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
-		console.log('넘길 때 마커 : ',markers[i].title);
+		console.log('넘길 때 마커 : ',markers[i].title);	// 마커값 테스트
 	}
 
 
