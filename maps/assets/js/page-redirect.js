@@ -37,6 +37,7 @@ let goBoard = () => {
  */
 
 let domesticTrip = () => {
+    alert(1);
     setTimeout(() => {
         location.href = '../../../local/application/maps/application/domestic.php';
     }, 0);

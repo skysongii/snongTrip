@@ -38,13 +38,13 @@ let goBoard = () => {
 
 let domesticTrip = () => {
     setTimeout(() => {
-        location.href = '../../../local/application/maps/application/domestic.php';
+        // location.href = 'http://localhost/local/maps/application/views/domestic.php';
     }, 0);
     var element = document.getElementById('change-typed')
     element.innerHTML = '<h2 id="change-typed" class="blink">  자유게시판 페이지로 이동합니다</h2>';
 }
-
-
+// local\maps\application\views\domestic.php
+// C:\xampp\htdocs\local\maps\application\views\domestic.php
 /**
  * 2024-1-3
  * @author -> csh
