@@ -10836,3 +10836,17 @@ textarea.form-control-lg {
   font-weight: bold;
   /* z-index: 10; */
 }
+
+.lead-q {
+  font-weight: bold;
+  color : var(--bs-gray-dark);
+  font-size: 0.95rem;
+  text-decoration-line: none;
+}
+
+.lead-a {
+  font-weight: 800;
+  color:#0c63e4;
+  text-decoration-line: none;
+  font-size: 0.9rem;  
+}

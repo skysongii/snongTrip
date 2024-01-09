@@ -15,7 +15,7 @@ let kor_location =
 			period : '2023.04.22',
 			contents : 
 			{
-				place : '녹차밭'
+				place : ['녹차밭']
 			}
 		}
 	],
@@ -27,7 +27,7 @@ let kor_location =
 			period : '2023.10.14 ~ 2023.10.15',
 			contents : 
 			{
-				place : '을왕리 해수욕장'
+				place : ['을왕리 해수욕장', '태종대회조개구이']
 			}
 		}
 	],
@@ -39,7 +39,7 @@ let kor_location =
 			period : '2023.2.11 ~ 2023.2.12',
 			contents : 
 			{
-				place : '펜션...'
+				place : ['펜션...']
 			}
 		}
 	],
@@ -51,8 +51,8 @@ let kor_location =
 			period : '2023.2.11 ~ 2023.2.12',
 			contents : 
 			{
-				place 	: '한옥마을',
-				stay	: '비하녹'
+				place 	: ['한옥마을'],
+				stay	: ['비하녹']
 			}
 		}
 	],
@@ -126,6 +126,8 @@ console.log("zoom:" + zoom);
 		let period		= infowindow.period;
 		let place		= infowindow.contents.place;
 
+		console.log(`지역 : ${title_name} , \n 배열 길이 : ${place.length}`); // 
+
 		naver.maps.Event.addListener(marker, "click", function(e) {
 			console.log('marker :' , marker);
 			console.log('info :' , infowindow);
@@ -147,7 +149,10 @@ console.log("zoom:" + zoom);
 				// location_lead.innerText		= "";
 				location_name.innerText		= title_name;
 				location_period.innerText	= period;
-				lead_place_q.innerText		= "장소";
+				lead_place_q.innerText		= "가본곳 : ";
+				// for (i=0; i<place.length; i++) {
+				// 	console.log(place);
+				// }
 				lead_place_a.innerText		= place;
 
 			}
@@ -156,7 +161,7 @@ console.log("zoom:" + zoom);
 	for (var i=0, ii=markers.length; i<ii; i++) {
 
 		naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
-		console.log('넘길 때 마커 : ',markers[i].title);	// 마커값 테스트
+		// console.log('넘길 때 마커 : ',markers[i].title);	// 마커값 테스트
 	}
 
 

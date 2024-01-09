@@ -56,9 +56,9 @@
                             <!-- <span class="text-decoration-line-through">$45.00</span> -->
                             <span id="location-period">기간</span>
                         </div>
-                        <p id="lead" class="lead">dd
-                            <a id="lead-place-q"><a id="lead-place-a"></a></a><br>
-                            <a id="lead-stay-q" class="lead"><a id="lead-stay-a"></a></a><br>
+                        <p id="lead" class="lead">
+                            <a id="lead-place-q" class="lead-q"><a id="lead-place-a" class="lead-a"></a></a><br>
+                            <a id="lead-stay-q" class="lead-q"><a id="lead-stay-a" class="lead-a"></a></a><br>
                         </p>
                             
                             
@@ -66,7 +66,7 @@
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <i class="bi-cart-fill me-1"></i>
-                                Add to cart
+                                장소 등록하기
                             </button>
                         </div>
                     </div>
