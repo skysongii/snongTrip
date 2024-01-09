@@ -15,7 +15,8 @@ let kor_location =
 			period : '2023.04.22',
 			contents : 
 			{
-				place : ['녹차밭']
+				place 	: ['녹차밭'],
+				stay	: []
 			}
 		}
 	],
@@ -27,7 +28,8 @@ let kor_location =
 			period : '2023.10.14 ~ 2023.10.15',
 			contents : 
 			{
-				place : ['을왕리 해수욕장', '태종대회조개구이']
+				place 	: ['을왕리 해수욕장', '태종대회조개구이'],
+				stay	: []
 			}
 		}
 	],
@@ -39,7 +41,8 @@ let kor_location =
 			period : '2023.2.11 ~ 2023.2.12',
 			contents : 
 			{
-				place : ['펜션...']
+				place 	: [''],
+				stay	: ['머물 인 어우림']
 			}
 		}
 	],
@@ -143,6 +146,8 @@ console.log("zoom:" + zoom);
 				let location_period 	= document.getElementById("location-period");
 				let lead_place_q 		= document.getElementById("lead-place-q");
 				let lead_place_a 		= document.getElementById("lead-place-a");
+				let lead_stay_q 		= document.getElementById("lead-stay-q");
+				let lead_stay_a 		= document.getElementById("lead-stay-a");
 
 				
 				location_explain.innerText	= "대한민국";
