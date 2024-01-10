@@ -10850,3 +10850,24 @@ textarea.form-control-lg {
   text-decoration-line: none;
   font-size: 0.9rem;  
 }
+
+.modal{
+  position:absolute;
+  
+  /* 모달을 화면가운데 놓기위함. */
+  top:50%; 
+
+  /* 모달의 가로세로크기  */
+  width:400px;
+  height:600px; 
+
+  padding:40px;  
+
+  text-align: center;
+
+  background-color: rgb(255,255,255);
+  border-radius:10px; 
+  box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);
+
+  transform:translateY(-50%);
+}

@@ -63,15 +63,23 @@
                             
                             
                         <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                장소 등록하기
+                            <!-- <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" /> -->
+                            <button id="content-insert" class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <!-- <i class="bi-cart-fill me-1"></i> -->
+                                등록
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="modal">
+                <div class="modal_body">
+                    <h2>모달창 제목</h2>
+                    <p>모달창 내용 </p>
+                </div>
+            </div>
+            
         </section>
         
         <!-- Footer-->
@@ -87,3 +95,13 @@
         <script src="../../assets/js/navermaps.js"></script>
     </body>
 </html>
+
+<script>
+
+const modal = document.querySelector('.modal');
+        const btnOpenModal=document.querySelector('#content-insert');
+
+        btnOpenModal.addEventListener("click", ()=>{
+            modal.style.display="flex";
+        });
+</script>
