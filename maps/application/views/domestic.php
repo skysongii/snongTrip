@@ -43,8 +43,22 @@
                 </div>
             </div>
         </nav>
+
+        <!-- 등록 모달창 -->
+        <div class="modal">
+                <div class="modal_body">
+                    <h4>정보를 입력하세요.</h4>
+                    <input id="modal-stay" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="숙소을(를) 입력하세요." style="max-width: 13rem" /><hr style="color:white;">
+                    <input id="modal-food" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="식당을(를) 입력하세요." style="max-width: 13rem" /><hr style="color:white;">
+                    <input id="modal-place" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="식당을(를) 입력하세요." style="max-width: 13rem" /><hr style="color:white;">
+                    <!-- <p>모달창 내용 </p> -->
+                    <button id="modal-save" class="btn btn-outline-dark flex-shrink-0 modal-save" type="button">저장</button>
+                </div>
+            </div>
+
         <!-- Product section-->
         <section class="py-5">
+            
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div id="map" style="width:50%;height:500px;"></div>
@@ -63,7 +77,6 @@
                             
                             
                         <div class="d-flex">
-                            <!-- <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" /> -->
                             <button id="content-insert" class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <!-- <i class="bi-cart-fill me-1"></i> -->
                                 등록
@@ -73,12 +86,7 @@
                 </div>
             </div>
 
-            <div class="modal">
-                <div class="modal_body">
-                    <h2>모달창 제목</h2>
-                    <p>모달창 내용 </p>
-                </div>
-            </div>
+
             
         </section>
         
