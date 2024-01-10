@@ -102,15 +102,11 @@
         <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ksifq5x35r&callback=CALLBACK_FUNCTION"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="../../assets/js/navermaps.js"></script>
+        <script src="../../assets/js/modal.js"></script>
     </body>
 </html>
 
 <script>
 
-const modal = document.querySelector('.modal');
-        const btnOpenModal=document.querySelector('#content-insert');
 
-        btnOpenModal.addEventListener("click", ()=>{
-            modal.style.display="flex";
-        });
 </script>
