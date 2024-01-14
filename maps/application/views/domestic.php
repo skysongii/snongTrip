@@ -48,9 +48,9 @@
         <div class="modal">
                 <div class="modal_body">
                     <h4>정보를 입력하세요.</h4>
-                    <input id="modal-stay" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="숙소을(를) 입력하세요." style="max-width: 13rem" /><hr style="color:white;">
-                    <input id="modal-food" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="식당을(를) 입력하세요." style="max-width: 13rem" /><hr style="color:white;">
-                    <input id="modal-place" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="식당을(를) 입력하세요." style="max-width: 13rem" /><hr style="color:white;">
+                    <input id="modal-stay" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="숙소을(를) 입력하세요." style="max-width: 13rem; margin-bottom: 2px;" />
+                    <input id="modal-food" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="식당을(를) 입력하세요." style="max-width: 13rem; margin-bottom: 2px;" />
+                    <input id="modal-place" class="form-control text-center me-3" id="inputQuantity" type="search" value="" placeholder="식당을(를) 입력하세요." style="max-width: 13rem; margin-bottom: 2px;" />
                     <!-- <p>모달창 내용 </p> -->
                     <button id="modal-save" class="btn btn-outline-dark flex-shrink-0 modal-save" type="button">저장</button>
                     <button id="modal-cancel" class="btn btn-outline-dark flex-shrink-0 modal-cancel" type="button">닫기</button>
