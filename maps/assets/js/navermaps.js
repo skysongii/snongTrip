@@ -1,4 +1,4 @@
-import { kor_location } from "./location";
+import { kor_location } from "./location.js";
 
 /** 마커 배열 선언 */
 let markers 		= new Array();
@@ -51,8 +51,6 @@ console.log("zoom:" + zoom);
 		infowindows.push(infowindow);
 
 	}
-
-	a
 	
 	/**
 	 * @author  : csh

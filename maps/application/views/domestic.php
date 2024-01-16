@@ -121,11 +121,11 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <!-- <script src="js/scripts.js"></script> -->
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ksifq5x35r&callback=CALLBACK_FUNCTION"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="module" src="../../assets/js/location.js"></script>
-    <script type="text/javascript" src="../../assets/js/navermaps.js"></script>
+    <!-- <script type="module" src="../../assets/js/location.js"></script> -->
+    <script type="module" src="../../assets/js/navermaps.js"></script>
     <script src="../../assets/js/modal.js"></script>
 </body>
 
