@@ -122,4 +122,22 @@ console.log("zoom:" + zoom);
 	}
 
 
-		
+// Fetch API를 이용하여 데이터를 가져오는 함수 정의
+async function asynchronousMarker() {
+	try {
+	  const response = await fetch('./location.js'); // 실제 파일 경로에 맞게 수정해주세요.
+	  const data = await response;
+	//   const data = await response.json();
+  
+	  // 가져온 데이터 활용 예시
+	  console.log(data[0][0]);
+  
+	  // 여기에서 데이터 활용 로직을 작성하면 됩니다.
+	  // 예를 들어, Naver Maps API를 사용하여 지도에 위치 표시 등...
+	} catch (error) {
+	  console.error('데이터를 가져오는 중 오류가 발생했습니다:', error);
+	}
+  }
+  
+  // asynchronousMarker 함수 호출
+  asynchronousMarker();
