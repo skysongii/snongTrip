@@ -22,10 +22,25 @@ zoomControlOptions: {
 }
 });
 
+
+
 map.setOptions("disableKineticPan", false); // 관성 드래깅 켜기
 map.setOptions("tileTransition", true); // 타일 fadeIn 효과 켜기
 
+// 현재 보이는 지도의 경계
+var ne_lat = map.getBounds()._ne._lat; // 북동쪽 위도
+var ne_lng = map.getBounds()._ne._lng; // 북동쪽 경도
+var sw_lat = map.getBounds()._sw._lat; // 남서쪽 위도
+var sw_lng = map.getBounds()._sw._lng; // 남서쪽 경도
+
+console.log("ne_lat : ", ne_lat);
+console.log("ne_lng : ", ne_lng);
+console.log("sw_lat : ", sw_lat);
+console.log("sw_lng : ", sw_lng);
+
+
 naver.maps.Event.addListener(map, "zoom_changed", function(zoom) {
+
 console.log("zoom:" + zoom);
 });
 
