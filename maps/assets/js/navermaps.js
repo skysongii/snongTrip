@@ -126,8 +126,7 @@ console.log("zoom:" + zoom);
 async function asynchronousMarker() {
 	try {
 	  const response = await fetch('./location.js'); // 실제 파일 경로에 맞게 수정해주세요.
-	  const data = await response;
-	//   const data = await response.json();
+	  const data = await response.json();
   
 	  // 가져온 데이터 활용 예시
 	  console.log(data[0][0]);
