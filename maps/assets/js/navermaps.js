@@ -4,6 +4,9 @@ import { kor_location } from "./location.js";
 let markers 		= new Array();
 let infowindows 	= new Array();
 
+/** 좌표 변수 선언 */
+let lat, lng; // 위도, 경도
+
 // kor_location length
 let latlng_len = kor_location.length;
 
@@ -27,21 +30,41 @@ zoomControlOptions: {
 map.setOptions("disableKineticPan", false); // 관성 드래깅 켜기
 map.setOptions("tileTransition", true); // 타일 fadeIn 효과 켜기
 
-// 현재 보이는 지도의 경계
-var ne_lat = map.getBounds()._ne._lat; // 북동쪽 위도
-var ne_lng = map.getBounds()._ne._lng; // 북동쪽 경도
-var sw_lat = map.getBounds()._sw._lat; // 남서쪽 위도
-var sw_lng = map.getBounds()._sw._lng; // 남서쪽 경도
 
-console.log("ne_lat : ", ne_lat);
-console.log("ne_lng : ", ne_lng);
-console.log("sw_lat : ", sw_lat);
-console.log("sw_lng : ", sw_lng);
+var move_value = 0;
+
+// 지도 이동시 move_value 값에 따라 updateMArkers 함수 실행 여부 판단
+    naver.maps.Event.addListener(map, 'idle', function() {
+        if (move_value == 0) {
+            updateMarkers(map, markers, move_value);
+        } else {
+
+        }
+    })
+
+let updateMarkers = (map, markers, move_value) => {
+	let mapBounds = map.getBounds();
+        var marker, position;
+        // $(".content-item").hide();
+	console.log(mapBounds);
+	// 현재 보이는 지도의 경계
+	let ne_lat = mapBounds._ne._lat; // 북동쪽 위도
+	let ne_lng = mapBounds._ne._lng; // 북동쪽 경도
+	let sw_lat = mapBounds._sw._lat; // 남서쪽 위도
+	let sw_lng = mapBounds._sw._lng; // 남서쪽 경도
+
+	console.log(`북동쪽 위도: ${ne_lat}`);
+	console.log(`북동쪽 경도: ${ne_lng}`);
+	console.log(`남서쪽 위도: ${sw_lat}`);
+	console.log(`남서쪽 경도 : ${sw_lng}`);
+        
+};
 
 
+
+// 줌 이벤트
 naver.maps.Event.addListener(map, "zoom_changed", function(zoom) {
 
-console.log("zoom:" + zoom);
 });
 
 
@@ -122,21 +145,3 @@ console.log("zoom:" + zoom);
 	}
 
 
-// Fetch API를 이용하여 데이터를 가져오는 함수 정의
-async function asynchronousMarker() {
-	try {
-	  const response = await fetch('./location.js'); // 실제 파일 경로에 맞게 수정해주세요.
-	  const data = await response.json();
-  
-	  // 가져온 데이터 활용 예시
-	  console.log(data[0][0]);
-  
-	  // 여기에서 데이터 활용 로직을 작성하면 됩니다.
-	  // 예를 들어, Naver Maps API를 사용하여 지도에 위치 표시 등...
-	} catch (error) {
-	  console.error('데이터를 가져오는 중 오류가 발생했습니다:', error);
-	}
-  }
-  
-  // asynchronousMarker 함수 호출
-  asynchronousMarker();
