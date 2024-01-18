@@ -58,9 +58,10 @@ let updateMarkers = (map, markers, move_value) => {
 	console.log(`남서쪽 위도: ${sw_lat}`);
 	console.log(`남서쪽 경도 : ${sw_lng}`);
         
+	console.log(kor_location[0][0].name);
 };
 
-
+// for (i=0; i<)
 
 // 줌 이벤트
 naver.maps.Event.addListener(map, "zoom_changed", function(zoom) {
