@@ -36,12 +36,21 @@ var move_value = 0;
 // 지도 이동시 move_value 값에 따라 updateMArkers 함수 실행 여부 판단
     naver.maps.Event.addListener(map, 'idle', function() {
         if (move_value == 0) {
-            updateMarkers(map, markers, move_value);
+            updateMarkers(map, markers, move_value); // 지도 이동시 updateMarkers 실행
         } else {
 
         }
     })
 
+	
+/**
+ * @author	: csh
+ * @date	: 2024-1-21
+ * @param {} map 
+ * @param {*} markers 
+ * @param {*} move_value 
+ * 지도 이동 시 이벤트
+ */
 let updateMarkers = (map, markers, move_value) => {
 	let mapBounds = map.getBounds();
         var marker, position;
