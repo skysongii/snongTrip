@@ -85,12 +85,15 @@ for(i=0; i < kor_location.length; i++) {
 	};
 	console.log(`location_lat_arr : ${location_lat_arr}`);
 	console.log(`location_lng_arr : ${location_lng_arr}`);
-}
 	let marker = new naver.maps.Marker({
 		position: new naver.maps.LatLng(location_lat, location_lng),
 		map: map,
 		title : kor_location[i][0].name,
 	});
+}
+
+for(i=0; i<location_lat_arr.length; i++) {
+}
 
 	// let marker = new naver.maps.Marker({
 	// 	position: new naver.maps.LatLng(kor_location[i][0].lat, kor_location[i][0].lng),
