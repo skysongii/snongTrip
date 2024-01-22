@@ -3,7 +3,8 @@ import { kor_location } from "./location.js";
 /** 마커 배열 선언 */
 let markers 			= new Array();
 let infowindows 		= new Array();
-let condition_markers	= [];
+let location_lat_arr	= [];
+let location_lng_arr	= [];
 
 /** 좌표 변수 선언 */
 let lat, lng; // 위도, 경도
@@ -77,10 +78,14 @@ for(i=0; i < kor_location.length; i++) {
 	
 	// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
 	if((sw_lat < location_lat && location_lat < ne_lat) && (sw_lng < location_lng && ne_lng)) {
-		console.log(`location_latzz : ${location_lat}`);
-		console.log(`location_lng : ${location_lng}`);
-		
+		// console.log(`location_latzz : ${location_lat}`);
+		// console.log(`location_lng : ${location_lng}`);
+	location_lat_arr.push(location_lat);		
+	location_lng_arr.push(location_lng);		
 	};
+	console.log(`location_lat_arr : ${location_lat_arr}`);
+	console.log(`location_lng_arr : ${location_lng_arr}`);
+}
 	let marker = new naver.maps.Marker({
 		position: new naver.maps.LatLng(location_lat, location_lng),
 		map: map,
@@ -105,7 +110,6 @@ for(i=0; i < kor_location.length; i++) {
 	markers.push(marker);
 	infowindows.push(infowindow);
 
-}
 	
 /**
  * @author  : csh
