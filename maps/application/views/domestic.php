@@ -48,21 +48,21 @@
         </div>
     </nav>
 
-    <!-- 등록 모달창 -->
-    <div class="modal">
+        <!-- 등록 모달창 -->
+        <div class="modal">
     <!-- //모달을 감쌀 박스 -->
         <div class="popup-wrap" id="popup"> 
         <!-- //실질적 모달팝업 -->
             <div class="popup"> 
             <!-- //로고 영역 -->
                 <div class="popup-head"> 
-                    <span class="head-title">MuziMuzi</span>
+                    <span class="head-title">지역 입력</span>
                 </div>
                 <!-- //컨텐츠 영역 -->
                 <div class="popup-body"> 
                     <div class="body-content">
                         <div class="body-titlebox">
-                            <h1>Confirm Modal</h1>
+                            <h1>주소를 입력하세요.</h1>
                         </div>
                         <div class="body-contentbox">
                             <p> 모달 내용칸 </p>
@@ -132,6 +132,5 @@
 </html>
 
 <script>
-
 
 </script>
