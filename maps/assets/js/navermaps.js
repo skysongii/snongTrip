@@ -78,28 +78,18 @@ for(i=0; i < kor_location.length; i++) {
 	
 	// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
 	if((sw_lat < location_lat && location_lat < ne_lat) && (sw_lng < location_lng && ne_lng)) {
-		// console.log(`location_latzz : ${location_lat}`);
-		// console.log(`location_lng : ${location_lng}`);
 	location_lat_arr.push(location_lat);		
 	location_lng_arr.push(location_lng);		
 	};
-	console.log(`location_lat_arr : ${location_lat_arr}`);
-	console.log(`location_lng_arr : ${location_lng_arr}`);
+}
+
+// location_lat_arr 배열에 넣은 좌표값들을 재반복하여 마커 출력
+for(i=0; i<location_lat_arr.length; i++) {
 	let marker = new naver.maps.Marker({
-		position: new naver.maps.LatLng(location_lat, location_lng),
+		position: new naver.maps.LatLng(location_lat_arr[i], location_lng_arr[i]),
 		map: map,
 		title : kor_location[i][0].name,
 	});
-}
-
-for(i=0; i<location_lat_arr.length; i++) {
-}
-
-	// let marker = new naver.maps.Marker({
-	// 	position: new naver.maps.LatLng(kor_location[i][0].lat, kor_location[i][0].lng),
-	// 	map: map,
-	// 	title : kor_location[i][0].name,
-	// });
 
 	let contentString = '<div id="info-content">'+ kor_location[i][0].name+'</div>';
 	
@@ -109,9 +99,11 @@ for(i=0; i<location_lat_arr.length; i++) {
 		period 		: kor_location[i][0].period,
 		contents	: kor_location[i][0].contents
 	});
-
+	
 	markers.push(marker);
 	infowindows.push(infowindow);
+}
+
 
 	
 /**
