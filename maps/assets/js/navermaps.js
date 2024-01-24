@@ -18,7 +18,7 @@ const mapDiv = document.getElementById("map"); // 'map'으로 선언해도 동�
 //지도 생성 시에 옵션을 지정할 수 있습니다.
 const map = new naver.maps.Map("map", {
 center: new naver.maps.LatLng(35.4799, 127.2892), //지도의 초기 중심 좌표
-zoom: 10, //지도의 초기 줌 레벨
+zoom: 7, //지도의 초기 줌 레벨
 minZoom: 7, //지도의 최소 줌 레벨
 zoomControl: true, //줌 컨트롤의 표시 여부
 zoomControlOptions: {
@@ -144,83 +144,84 @@ for (var i=0, ii=markers.length; i<ii; i++) {
  * 지도 이동 시 이벤트
  */
 function updateMarkers(map, markers) {
-	location_lat_arr = [];
-	location_lng_arr = [];
-	markers			 = [];
+	// location_lat_arr = [];
+	// location_lng_arr = [];
+	// markers			 = [];
+	// let contentString = '';
+    // let mapBounds = map.getBounds();
+	// let location_lat, location_lng;
 
-    let mapBounds = map.getBounds();
-
-	// 현재 보이는 지도의 경계
-	ne_lat = mapBounds._ne._lat; // 북동쪽 위도
-	ne_lng = mapBounds._ne._lng; // 북동쪽 경도
-	sw_lat = mapBounds._sw._lat; // 남서쪽 위도
-	sw_lng = mapBounds._sw._lng; // 남서쪽 경도
+	// // 현재 보이는 지도의 경계
+	// ne_lat = mapBounds._ne._lat; // 북동쪽 위도
+	// ne_lng = mapBounds._ne._lng; // 북동쪽 경도
+	// sw_lat = mapBounds._sw._lat; // 남서쪽 위도
+	// sw_lng = mapBounds._sw._lng; // 남서쪽 경도
 	
-	console.log(`북동쪽 위도: ${ne_lat}`);
-	console.log(`북동쪽 경도: ${ne_lng}`);
-	console.log(`남서쪽 위도: ${sw_lat}`);
-	console.log(`남서쪽 경도 : ${sw_lng}`);
+	// console.log(`북동쪽 위도: ${ne_lat}`);
+	// console.log(`북동쪽 경도: ${ne_lng}`);
+	// console.log(`남서쪽 위도: ${sw_lat}`);
+	// console.log(`남서쪽 경도 : ${sw_lng}`);
 	
-	for(i=0; i < kor_location.length; i++) {
-		let location_lat = kor_location[i][0].lat;
-		let location_lng = kor_location[i][0].lng;
+	// for(i=0; i < kor_location.length; i++) {
+	// 	location_lat = kor_location[i][0].lat;
+	// 	location_lng = kor_location[i][0].lng;
 		
-		console.log(`location_lat : ${location_lat}`);
-		console.log(`location_lng : ${location_lng}`);
-		// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
-		if((sw_lat < location_lat && location_lat < ne_lat) && (sw_lng < location_lng && ne_lng)) {
-			location_lat_arr.push(location_lat);		
-			location_lng_arr.push(location_lng);	
-			alert(4);	
+	// 	console.log(kor_location[i]);
+	// 	// console.log(`location_lat : ${location_lat}`);
+	// 	// console.log(`location_lng : ${location_lng}`);
+	// 	// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
+	// 	if((sw_lat < location_lat && location_lat < ne_lat) && (sw_lng < location_lng && ne_lng)) {
+	// 		location_lat_arr.push(location_lat);		
+	// 		location_lng_arr.push(location_lng);	
+
+	// 		for(i=0; i<location_lat_arr.length; i++) {
+	// 			marker = new naver.maps.Marker({
+	// 				position: new naver.maps.LatLng(location_lat_arr[i], location_lng_arr[i]),
+	// 				map: map,
+	// 				title : kor_location[i][0].name
+	// 			});
+	// 			contentString = '<div id="info-content">'+ kor_location[i][0].name+'</div>';
+	// 		};
 			
-			for(i=0; i<location_lat_arr.length; i++) {
-				console.log(location_lat_arr);
-				alert(3);
-				marker = new naver.maps.Marker({
-					position: new naver.maps.LatLng(location_lat_arr[i], location_lng_arr[i]),
-					map: map,
-					title : kor_location[i][0].name
-				});
-		};
+	// 		// 추가적인 속성
+	// 		let infowindow = new naver.maps.InfoWindow({
+	// 			content		: contentString,
+	// 			period 		: kor_location[i][0].period,
+	// 			contents	: kor_location[i][0].contents
+	// 		});
+			
+	// 		markers.push(marker);
+	// 		infowindows.push(infowindow);
+
+	
+	// 	}	
+	
+	// };
+}
+	
+	// 좌표 경계까지만 마커 보임 및 숨김
+	for (var i = 0; i < markers.length; i++) {
+		marker = markers[i]
+		position = marker.getPosition();
 		
+		if (mapBounds.hasLatLng(position)) {
+			showMarker(map, marker);
+			console.log('show');
+		} else {
+			hideMarker(map, marker);
+			console.log('hide');
+		}
 	}
 	
+	function showMarker(map, marker) {
+		
+		if (marker.getMap()) return;
+		marker.setMap(map);
+	}
 	
-		let contentString = '<div id="info-content">'+ kor_location[i][0].name+'</div>';
+	function hideMarker(map, marker) {
 		
-		// 추가적인 속성
-		let infowindow = new naver.maps.InfoWindow({
-			content		: contentString,
-			period 		: kor_location[i][0].period,
-			contents	: kor_location[i][0].contents
-		});
-		alert(1);
-		markers.push(marker);
-		infowindows.push(infowindow);
-	};
-
-	// 좌표 경계까지만 마커 보임 및 숨김
-    for (var i = 0; i < markers.length; i++) {
-		
-        marker = markers[i]
-        position = marker.getPosition();
-
-        if (mapBounds.hasLatLng(position)) {
-            showMarker(map, marker);
-        } else {
-            hideMarker(map, marker);
-        }
-    }
-}
-
-function showMarker(map, marker) {
-
-    if (marker.getMap()) return;
-    marker.setMap(map);
-}
-
-function hideMarker(map, marker) {
-
-    if (!marker.getMap()) return;
-    marker.setMap(null);
-}
+		if (!marker.getMap()) return;
+		marker.setMap(null);
+	}
+	
