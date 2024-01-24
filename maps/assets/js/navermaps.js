@@ -146,6 +146,7 @@ for (var i=0, ii=markers.length; i<ii; i++) {
 function updateMarkers(map, markers) {
 	location_lat_arr = [];
 	location_lng_arr = [];
+	markers			 = [];
 
     let mapBounds = map.getBounds();
 
@@ -169,19 +170,21 @@ function updateMarkers(map, markers) {
 		// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
 		if((sw_lat < location_lat && location_lat < ne_lat) && (sw_lng < location_lng && ne_lng)) {
 			location_lat_arr.push(location_lat);		
-			location_lng_arr.push(location_lng);		
+			location_lng_arr.push(location_lng);	
+			alert(4);	
 			
+			for(i=0; i<location_lat_arr.length; i++) {
+				console.log(location_lat_arr);
+				alert(3);
+				marker = new naver.maps.Marker({
+					position: new naver.maps.LatLng(location_lat_arr[i], location_lng_arr[i]),
+					map: map,
+					title : kor_location[i][0].name
+				});
 		};
 		
 	}
 	
-	for(i=0; i<location_lat_arr.length; i++) {
-		console.log(location_lat_arr);
-		marker = new naver.maps.Marker({
-			position: new naver.maps.LatLng(location_lat_arr[i], location_lng_arr[i]),
-			map: map,
-			title : kor_location[i][0].name
-		});
 	
 		let contentString = '<div id="info-content">'+ kor_location[i][0].name+'</div>';
 		
@@ -191,11 +194,12 @@ function updateMarkers(map, markers) {
 			period 		: kor_location[i][0].period,
 			contents	: kor_location[i][0].contents
 		});
-		
+		alert(1);
 		markers.push(marker);
 		infowindows.push(infowindow);
 	};
 
+	// 좌표 경계까지만 마커 보임 및 숨김
     for (var i = 0; i < markers.length; i++) {
 		
         marker = markers[i]
