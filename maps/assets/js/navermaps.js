@@ -64,11 +64,13 @@ for(i=0; i < kor_location.length; i++) {
 	let infowindow = new naver.maps.InfoWindow({
 		content		: contentString,
 		period 		: kor_location[i][0].period,
-		place		: kor_location[i][0].place.visit
+		place		: kor_location[i][0].place
 	});
 	
 	markers.push(marker);
 	infowindows.push(infowindow);
+	console.log(infowindows);
+	
 }
 	
 /**
@@ -78,20 +80,15 @@ for(i=0; i < kor_location.length; i++) {
  */
 
 let getClickHandler = (seq) => {
-	let marker = markers[seq],
-	infowindow = infowindows[seq];
+	let marker = markers[seq];
+	let infowindow = infowindows[seq];
 
 	let title_name 	= infowindow.wrapper.innerText;
 	let period		= infowindow.period;
-	let place		= infowindow.place.visit;
+	let visit		= infowindow.place.visit;
 
-	// console.log(place);
-
-	console.log(`지역 : ${title_name} , \n 배열 길이 : ${place.length}`); // 
 
 	naver.maps.Event.addListener(marker, "click", function(e) {
-		// console.log('marker :' , marker);
-		// console.log('info :' , infowindow);
 		if (infowindow.getMap()) {
 			infowindow.close();			// 클릭 시 정보창 닫음
 		} else {
@@ -109,14 +106,10 @@ let getClickHandler = (seq) => {
 
 			
 			location_explain.innerText	= "대한민국";
-			// location_lead.innerText		= "";
 			location_name.innerText		= title_name;
 			location_period.innerText	= period;
 			lead_place_q.innerText		= "가본곳 : ";
-			// for (i=0; i<place.length; i++) {
-			// 	console.log(place);
-			// }
-			lead_place_a.innerText		= place;
+			lead_place_a.innerText		= visit;
 
 		}
 	});
@@ -125,7 +118,6 @@ let getClickHandler = (seq) => {
 for (var i=0, ii=markers.length; i<ii; i++) {
 
 	naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
-	// console.log('넘길 때 마커 : ',markers[i].title);	// 마커값 테스트
 }
 
 // 지도 이동 이벤트
@@ -147,14 +139,15 @@ naver.maps.Event.addListener(map, 'idle', function() {
  * 지도 이동 시 이벤트
  */
 function updateMarkers(map, markers) {
-	// location_lat_arr = [];
-	// location_lng_arr = [];
+	location_lat_arr = [];
+	location_lng_arr = [];
 	// markers			 = [];
     let mapBounds = map.getBounds();
 	let location_lat, location_lng;
 	let position, marker;
 	let contentString;
 	let infowindow;
+	let title;
 
 	// 현재 보이는 지도의 경계
 	ne_lat = mapBounds._ne._lat; // 북동쪽 위도
@@ -171,7 +164,6 @@ function updateMarkers(map, markers) {
 		location_lat = kor_location[i][0].lat;
 		location_lng = kor_location[i][0].lng;
 		
-		console.log(kor_location[i]);
 		// console.log(`location_lat : ${location_lat}`);
 		// console.log(`location_lng : ${location_lng}`);
 		// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
@@ -191,10 +183,9 @@ function updateMarkers(map, markers) {
 				infowindow = new naver.maps.InfoWindow({
 					content		: contentString,
 					period 		: kor_location[i].period,
-					contents	: kor_location[i].contents
+					place		: kor_location[i].place
 				});
 				
-				console.log(infowindow);
 			};
 			
 			markers.push(marker);
@@ -202,7 +193,7 @@ function updateMarkers(map, markers) {
 		}	
 	
 	};
-		naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
+		// naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
 		// console.log('넘길 때 마커 : ',markers[i].title);	// 마커값 테스트
 
 	// 좌표 경계까지만 마커 보임 및 숨김

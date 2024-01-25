@@ -60,7 +60,6 @@ let kor_location =
 	],
 
 ]
-console.log(kor_location[1][0].place.visit);
 
 /**--------------------------------------------------------------------------------------- */
 export { kor_location };
