@@ -12,9 +12,9 @@ let kor_location =
 			lat	: '34.715536',
 			lng	: '127.076986',
 			period : '2023.04.22',
-			contents : 
+			place : 
 			{
-				place 	: ['녹차밭'],
+				visit 	: ['녹차밭'],
 				stay	: []
 			}
 		}
@@ -25,9 +25,9 @@ let kor_location =
 			lat	: '37.447610',
 			lng	: '126.372686',
 			period : '2023.10.14 ~ 2023.10.15',
-			contents : 
+			place : 
 			{
-				place 	: ['을왕리 해수욕장', '태종대회조개구이'],
+				visit 	: ['을왕리 해수욕장', '태종대회조개구이'],
 				stay	: []
 			}
 		}
@@ -38,9 +38,9 @@ let kor_location =
 			lat	: '34.9668',
 			lng	: '127.5037',
 			period : '2023.2.11 ~ 2023.2.12',
-			contents : 
+			place : 
 			{
-				place 	: [''],
+				visit 	: [''],
 				stay	: ['머물 인 어우림']
 			}
 		}
@@ -51,15 +51,16 @@ let kor_location =
 			lat	: '35.8187',
 			lng	: '127.1539',
 			period : '2023.2.11 ~ 2023.2.12',
-			contents : 
+			place : 
 			{
-				place 	: ['한옥마을'],
+				visit 	: ['한옥마을'],
 				stay	: ['비하녹']
 			}
 		}
 	],
 
 ]
+console.log(kor_location[1][0].place.visit);
 
 /**--------------------------------------------------------------------------------------- */
 export { kor_location };

@@ -32,14 +32,6 @@ map.setOptions("tileTransition", true); // 타일 fadeIn 효과 켜기
 
 var move_value = 0;
 
-// 지도 이동시 move_value 값에 따라 updateMArkers 함수 실행 여부 판단
-naver.maps.Event.addListener(map, 'idle', function() {
-	if (move_value == 0) {
-		updateMarkers(map, markers, move_value); // 지도 이동시 updateMarkers 실행
-	} else {
-
-	}
-})
 
 
 // 줌 이벤트
@@ -72,7 +64,7 @@ for(i=0; i < kor_location.length; i++) {
 	let infowindow = new naver.maps.InfoWindow({
 		content		: contentString,
 		period 		: kor_location[i][0].period,
-		contents	: kor_location[i][0].contents
+		place		: kor_location[i][0].place.visit
 	});
 	
 	markers.push(marker);
@@ -91,9 +83,11 @@ let getClickHandler = (seq) => {
 
 	let title_name 	= infowindow.wrapper.innerText;
 	let period		= infowindow.period;
-	let place		= infowindow.contents.place;
+	let place		= infowindow.place.visit;
 
-	// console.log(`지역 : ${title_name} , \n 배열 길이 : ${place.length}`); // 
+	// console.log(place);
+
+	console.log(`지역 : ${title_name} , \n 배열 길이 : ${place.length}`); // 
 
 	naver.maps.Event.addListener(marker, "click", function(e) {
 		// console.log('marker :' , marker);
@@ -134,6 +128,15 @@ for (var i=0, ii=markers.length; i<ii; i++) {
 	// console.log('넘길 때 마커 : ',markers[i].title);	// 마커값 테스트
 }
 
+// 지도 이동 이벤트
+naver.maps.Event.addListener(map, 'idle', function() {
+	if (move_value == 0) {
+		updateMarkers(map, markers); // 지도 이동시 updateMarkers 실행
+	} else {
+
+	}
+})
+
 
 /**
  * @author	: csh
@@ -147,58 +150,61 @@ function updateMarkers(map, markers) {
 	// location_lat_arr = [];
 	// location_lng_arr = [];
 	// markers			 = [];
-	// let contentString = '';
-    // let mapBounds = map.getBounds();
-	// let location_lat, location_lng;
+    let mapBounds = map.getBounds();
+	let location_lat, location_lng;
+	let position, marker;
+	let contentString;
+	let infowindow;
 
-	// // 현재 보이는 지도의 경계
-	// ne_lat = mapBounds._ne._lat; // 북동쪽 위도
-	// ne_lng = mapBounds._ne._lng; // 북동쪽 경도
-	// sw_lat = mapBounds._sw._lat; // 남서쪽 위도
-	// sw_lng = mapBounds._sw._lng; // 남서쪽 경도
+	// 현재 보이는 지도의 경계
+	ne_lat = mapBounds._ne._lat; // 북동쪽 위도
+	ne_lng = mapBounds._ne._lng; // 북동쪽 경도
+	sw_lat = mapBounds._sw._lat; // 남서쪽 위도
+	sw_lng = mapBounds._sw._lng; // 남서쪽 경도
 	
 	// console.log(`북동쪽 위도: ${ne_lat}`);
 	// console.log(`북동쪽 경도: ${ne_lng}`);
 	// console.log(`남서쪽 위도: ${sw_lat}`);
 	// console.log(`남서쪽 경도 : ${sw_lng}`);
 	
-	// for(i=0; i < kor_location.length; i++) {
-	// 	location_lat = kor_location[i][0].lat;
-	// 	location_lng = kor_location[i][0].lng;
+	for(i=0; i < kor_location.length; i++) {
+		location_lat = kor_location[i][0].lat;
+		location_lng = kor_location[i][0].lng;
 		
-	// 	console.log(kor_location[i]);
-	// 	// console.log(`location_lat : ${location_lat}`);
-	// 	// console.log(`location_lng : ${location_lng}`);
-	// 	// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
-	// 	if((sw_lat < location_lat && location_lat < ne_lat) && (sw_lng < location_lng && ne_lng)) {
-	// 		location_lat_arr.push(location_lat);		
-	// 		location_lng_arr.push(location_lng);	
+		console.log(kor_location[i]);
+		// console.log(`location_lat : ${location_lat}`);
+		// console.log(`location_lng : ${location_lng}`);
+		// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
+		if((sw_lat < location_lat && location_lat < ne_lat) && (sw_lng < location_lng && ne_lng)) {
+			location_lat_arr.push(location_lat);		
+			location_lng_arr.push(location_lng);	
 
-	// 		for(i=0; i<location_lat_arr.length; i++) {
-	// 			marker = new naver.maps.Marker({
-	// 				position: new naver.maps.LatLng(location_lat_arr[i], location_lng_arr[i]),
-	// 				map: map,
-	// 				title : kor_location[i][0].name
-	// 			});
-	// 			contentString = '<div id="info-content">'+ kor_location[i][0].name+'</div>';
-	// 		};
+			for(i=0; i<location_lat_arr.length; i++) {
+				marker = new naver.maps.Marker({
+					position: new naver.maps.LatLng(location_lat_arr[i], location_lng_arr[i]),
+					map: map,
+					title : kor_location[i][0].name
+				});
+				contentString = '<div id="info-content">'+ kor_location[i][0].name+'</div>';
+				
+				// 추가적인 속성
+				infowindow = new naver.maps.InfoWindow({
+					content		: contentString,
+					period 		: kor_location[i].period,
+					contents	: kor_location[i].contents
+				});
+				
+				console.log(infowindow);
+			};
 			
-	// 		// 추가적인 속성
-	// 		let infowindow = new naver.maps.InfoWindow({
-	// 			content		: contentString,
-	// 			period 		: kor_location[i][0].period,
-	// 			contents	: kor_location[i][0].contents
-	// 		});
-			
-	// 		markers.push(marker);
-	// 		infowindows.push(infowindow);
+			markers.push(marker);
+			infowindows.push(infowindow);
+		}	
+	
+	};
+		naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
+		// console.log('넘길 때 마커 : ',markers[i].title);	// 마커값 테스트
 
-	
-	// 	}	
-	
-	// };
-}
-	
 	// 좌표 경계까지만 마커 보임 및 숨김
 	for (var i = 0; i < markers.length; i++) {
 		marker = markers[i]
@@ -206,22 +212,20 @@ function updateMarkers(map, markers) {
 		
 		if (mapBounds.hasLatLng(position)) {
 			showMarker(map, marker);
-			console.log('show');
 		} else {
 			hideMarker(map, marker);
-			console.log('hide');
 		}
 	}
+}
+	
 	
 	function showMarker(map, marker) {
-		
+		console.log(1);
 		if (marker.getMap()) return;
-		marker.setMap(map);
 	}
 	
 	function hideMarker(map, marker) {
-		
+		console.log(2);
 		if (!marker.getMap()) return;
-		marker.setMap(null);
 	}
 	
