@@ -17,14 +17,16 @@ const mapDiv = document.getElementById("map"); // 'map'으로 선언해도 동�
 
 //지도 생성 시에 옵션을 지정할 수 있습니다.
 const map = new naver.maps.Map("map", {
-center: new naver.maps.LatLng(35.4799, 127.2892), //지도의 초기 중심 좌표
-zoom: 7, //지도의 초기 줌 레벨
-minZoom: 7, //지도의 최소 줌 레벨
-zoomControl: true, //줌 컨트롤의 표시 여부
-zoomControlOptions: {
-	//줌 컨트롤의 옵션
-	position: naver.maps.Position.TOP_RIGHT
-}
+	center: new naver.maps.LatLng(35.4799, 127.2892), //지도의 초기 중심 좌표
+	zoom: 7, //지도의 초기 줌 레벨
+	minZoom: 7, //지도의 최소 줌 레벨
+	zoomControl: true, //줌 컨트롤의 표시 여부
+	zoomControlOptions: {
+		//줌 컨트롤의 옵션
+		position: naver.maps.Position.TOP_RIGHT
+	},
+	mapTypeControl: true
+
 });
 
 map.setOptions("disableKineticPan", false); // 관성 드래깅 켜기
@@ -89,28 +91,37 @@ let getClickHandler = (seq) => {
 
 
 	naver.maps.Event.addListener(marker, "click", function(e) {
+		let location_explain 	= document.getElementById("marker-explain");
+		let location_lead		= document.getElementById("lead");
+		let location_name 		= document.getElementById("location-name");
+		let location_period 	= document.getElementById("location-period");
+		let lead_place_q 		= document.getElementById("lead-place-q");
+		let lead_place_a 		= document.getElementById("lead-place-a");
+		let lead_stay_q 		= document.getElementById("lead-stay-q");
+		let lead_stay_a 		= document.getElementById("lead-stay-a");
+
+		let con_show			= document.getElementById("content-update");
+
 		if (infowindow.getMap()) {
 			infowindow.close();			// 클릭 시 정보창 닫음
+			
+			// 마커 재클릭시 정보 초기화
+			location_explain.innerText	= "지도에서 궁금한 마커를 클릭";
+			location_name.innerText		= "대한민국";
+			location_period.innerText	= "기간";
+			lead_place_q.innerText		= "";
+			lead_place_a.innerText		= "";
+			con_show.style.display 		= "none";
 		} else {
 			infowindow.open(map, marker); // 클릭시 정보창 출력
-
+			console.log(infowindow.getMap());
 			// 마커 클릭 시 우측 글 변환
-			let location_explain 	= document.getElementById("marker-explain");
-			let location_lead		= document.getElementById("lead");
-			let location_name 		= document.getElementById("location-name");
-			let location_period 	= document.getElementById("location-period");
-			let lead_place_q 		= document.getElementById("lead-place-q");
-			let lead_place_a 		= document.getElementById("lead-place-a");
-			let lead_stay_q 		= document.getElementById("lead-stay-q");
-			let lead_stay_a 		= document.getElementById("lead-stay-a");
-
-			
 			location_explain.innerText	= "대한민국";
 			location_name.innerText		= title_name;
 			location_period.innerText	= period;
 			lead_place_q.innerText		= "가본곳 : ";
 			lead_place_a.innerText		= visit;
-
+			con_show.style.display 		= "block";
 		}
 	});
 }
@@ -139,62 +150,8 @@ naver.maps.Event.addListener(map, 'idle', function() {
  * 지도 이동 시 이벤트
  */
 function updateMarkers(map, markers) {
-	location_lat_arr = [];
-	location_lng_arr = [];
-	// markers			 = [];
     let mapBounds = map.getBounds();
-	let location_lat, location_lng;
 	let position, marker;
-	let contentString;
-	let infowindow;
-	let title;
-
-	// 현재 보이는 지도의 경계
-	ne_lat = mapBounds._ne._lat; // 북동쪽 위도
-	ne_lng = mapBounds._ne._lng; // 북동쪽 경도
-	sw_lat = mapBounds._sw._lat; // 남서쪽 위도
-	sw_lng = mapBounds._sw._lng; // 남서쪽 경도
-	
-	// console.log(`북동쪽 위도: ${ne_lat}`);
-	// console.log(`북동쪽 경도: ${ne_lng}`);
-	// console.log(`남서쪽 위도: ${sw_lat}`);
-	// console.log(`남서쪽 경도 : ${sw_lng}`);
-	
-	for(i=0; i < kor_location.length; i++) {
-		location_lat = kor_location[i][0].lat;
-		location_lng = kor_location[i][0].lng;
-		
-		// console.log(`location_lat : ${location_lat}`);
-		// console.log(`location_lng : ${location_lng}`);
-		// 새로운 배열 만들어서 if문 충족하면 배열에 넣고 다시 돌리기?
-		if((sw_lat < location_lat && location_lat < ne_lat) && (sw_lng < location_lng && ne_lng)) {
-			location_lat_arr.push(location_lat);		
-			location_lng_arr.push(location_lng);	
-
-			for(i=0; i<location_lat_arr.length; i++) {
-				marker = new naver.maps.Marker({
-					position: new naver.maps.LatLng(location_lat_arr[i], location_lng_arr[i]),
-					map: map,
-					title : kor_location[i][0].name
-				});
-				contentString = '<div id="info-content">'+ kor_location[i][0].name+'</div>';
-				
-				// 추가적인 속성
-				infowindow = new naver.maps.InfoWindow({
-					content		: contentString,
-					period 		: kor_location[i].period,
-					place		: kor_location[i].place
-				});
-				
-			};
-			
-			markers.push(marker);
-			infowindows.push(infowindow);
-		}	
-	
-	};
-		// naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
-		// console.log('넘길 때 마커 : ',markers[i].title);	// 마커값 테스트
 
 	// 좌표 경계까지만 마커 보임 및 숨김
 	for (var i = 0; i < markers.length; i++) {
