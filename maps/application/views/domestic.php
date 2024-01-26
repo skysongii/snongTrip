@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shop Item - Start Bootstrap Template</title>
+    <title>국내여행</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -48,35 +48,40 @@
         </div>
     </nav>
 
-        <!-- 등록 모달창 -->
-        <div class="modal">
-    <!-- //모달을 감쌀 박스 -->
-        <div class="popup-wrap" id="popup"> 
-        <!-- //실질적 모달팝업 -->
-            <div class="popup"> 
-            <!-- //로고 영역 -->
-                <div class="popup-head"> 
-                    <span class="head-title">지역 입력</span>
-                </div>
-                <!-- //컨텐츠 영역 -->
-                <div class="popup-body"> 
-                    <div class="body-content">
-                        <div class="body-titlebox">
-                            <h1>주소를 입력하세요.</h1>
-                        </div>
-                        <div class="body-contentbox">
-                            <p> 모달 내용칸 </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- //푸터 버튼 영역 -->
-                <div class="popup-foot"> 
-                    <span class="pop-btn confirm" id="confirm">확인</span>
-                    <span class="pop-btn close" id="close">창 닫기</span>
-                </div>
-            </div>
-        </div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+
+<!-- 모달 등록창 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">지역 등록</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">지역명</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">지역명</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
     </div>
+  </div>
+</div>
 
     <!-- Product section-->
     <section class="py-5">
@@ -99,14 +104,10 @@
 
 
                     <div class="d-flex">
-                        <button id="content-insert" class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <!-- <i class="bi-cart-fill me-1"></i> -->
-                            등록
-                        </button> &nbsp;
-                        <button id="content-update" class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <!-- <i class="bi-cart-fill me-1"></i> -->
-                            수정
-                        </button>
+                        <button type="button" id="content-insert" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">등록</button>&nbsp
+                    </div>
+                    <div class="d-flex">
+                        <button type="button" id="content-update" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">수정</button>
                     </div>
                 </div>
             </div>
@@ -130,7 +131,7 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <!-- <script type="module" src="../../assets/js/location.js"></script> -->
     <script type="module" src="../../assets/js/navermaps.js"></script>
-    <!-- <script src="../../assets/js/modal.js"></script> -->
+    <script src="../../assets/js/modal.js"></script> 
 </body>
 
 </html>

@@ -7026,6 +7026,7 @@ textarea.form-control-lg {
 
 .d-flex {
   display: flex !important;
+  float: left;
 }
 
 .d-inline-flex {
@@ -10850,46 +10851,6 @@ textarea.form-control-lg {
   color:#0c63e4;
   text-decoration-line: none;
   font-size: 0.9rem;  
-}
-
-.modal{
-  position:absolute;
-  
-  /* 모달을 화면가운데 놓기위함. */
-  top:20%;
-  left:30%;
-
-  /* 모달의 가로세로크기  */
-  width:20vw;
-  height:35vh; 
-
-  padding:40px;  
-
-  text-align: center;
-
-  background-color: rgb(255,255,255);
-  border-radius:10px; 
-  box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);
-
-  transform:translateY(-50%, -50%);
-}
-
-.modal-save {
-  position : absolute;
-  bottom:5%;
-  left:20%;
-  width:100%;
-  max-width:5rem;
-
-}
-
-.modal-cancel {
-  position : absolute;
-  bottom:5%;
-  left:55%;
-  width: 100%;
-  max-width:5rem;
-
 }
 
 #content-update {

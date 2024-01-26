@@ -9,7 +9,7 @@ const modal = document.querySelector('.modal');
 const btnOpenModal=document.querySelector('#content-insert');
 
 btnOpenModal.addEventListener("click", ()=>{
-    modal.style.display = "flex";
+    modal.style.display = "block";
 });
 
 // 모달창 닫기
