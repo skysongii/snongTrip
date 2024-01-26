@@ -1,3 +1,11 @@
+<?php
+    function aa() {
+        global $con;
+        echo $con;
+    }
+    aa();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -131,7 +139,7 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <!-- <script type="module" src="../../assets/js/location.js"></script> -->
     <script type="module" src="../../assets/js/navermaps.js"></script>
-    <script src="../../assets/js/modal.js"></script> 
+    <!-- <script src="../../assets/js/modal.js"></script>  -->
 </body>
 
 </html>
