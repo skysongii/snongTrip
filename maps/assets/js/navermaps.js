@@ -64,9 +64,10 @@ for(i=0; i < kor_location.length; i++) {
 	
 	// 추가적인 속성
 	let infowindow = new naver.maps.InfoWindow({
-		content		: contentString,
-		period 		: kor_location[i][0].period,
-		place		: kor_location[i][0].place
+		content			: contentString,
+		start_period	: kor_location[i][0].start_period,
+		end_period		: kor_location[i][0].end_period,
+		place			: kor_location[i][0].place
 	});
 	
 	markers.push(marker);
@@ -85,10 +86,18 @@ let getClickHandler = (seq) => {
 	let marker = markers[seq];
 	let infowindow = infowindows[seq];
 
-	let title_name 	= infowindow.wrapper.innerText;
-	let period		= infowindow.period;
-	let visit		= infowindow.place.visit;
-
+	// 지역명
+	let title_name 		= infowindow.wrapper.innerText;
+	// 시작일
+ 	let start_period	= infowindow.start_period;
+	// 종료일
+	let end_period		= infowindow.end_period;
+	// 시작 ~ 종료
+	let period			= start_period + ' ~ ' + end_period;
+	// 가본 장소
+	let visit			= infowindow.place.visit;
+	// 숙소
+	let stay			= infowindow.place.stay;
 
 	naver.maps.Event.addListener(marker, "click", function(e) {
 		let location_explain 	= document.getElementById("marker-explain");

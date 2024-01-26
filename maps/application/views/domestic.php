@@ -66,7 +66,7 @@
             <input type="text" class="form-control" id="recipient-name">
           </div>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">지역명</label>
+            <label for="recipient-name" class="col-form-label">기간</label>
             <input type="text" class="form-control" id="recipient-name">
           </div>
           <div class="mb-3">
