@@ -57,11 +57,50 @@
     </nav>
 
 <!-- 모달 등록창 -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="insert-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">지역 등록</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="searchGeocode" class="col-form-label">주소 입력 후 엔터</label>
+            <input type="text" class="form-control" id="search-geocode" placeholder="주소를 입력하세요">
+            <a id="chk-geocode" class="text-decoration-none"></a>
+            <!-- <button type="button" class="btn btn-info">Info</button> -->
+          </div>
+          <div class="mb-3">
+            <label for="geocode-name" class="col-form-label">지역명 - 자동으로 입력됩니다.</label>
+            <input type="text" class="form-control" id="geocode-name" readonly>
+            <!-- <button type="button" class="btn btn-info">Info</button> -->
+          </div>
+          <div class="mb-3">
+            <label for="period" class="col-form-label">기간</label>
+            <input type="text" class="form-control" id="period">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary">등록</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 모달 등록창 -->
+<div class="modal fade" id="update-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">지역 수정</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -109,10 +148,10 @@
 
 
                     <div class="d-flex">
-                        <button type="button" id="content-insert" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">등록</button>&nbsp
+                        <button type="button" id="content-insert" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#insert-modal" data-bs-whatever="@mdo">등록</button>&nbsp
                     </div>
                     <div class="d-flex">
-                        <button type="button" id="content-update" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">수정</button>
+                        <button type="button" id="content-update" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update-modal" data-bs-whatever="@mdo">수정</button>
                     </div>
                 </div>
             </div>
@@ -133,6 +172,7 @@
     <!-- Core theme JS-->
     <!-- <script src="js/scripts.js"></script> -->
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ksifq5x35r&callback=CALLBACK_FUNCTION"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ksifq5x35r&submodules=geocoder"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <!-- <script type="module" src="../../assets/js/location.js"></script> -->
     <script type="module" src="../../assets/js/navermaps.js"></script>

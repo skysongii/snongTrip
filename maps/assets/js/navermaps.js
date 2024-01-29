@@ -67,7 +67,8 @@ for(i=0; i < kor_location.length; i++) {
 		content			: contentString,
 		start_period	: kor_location[i][0].start_period,
 		end_period		: kor_location[i][0].end_period,
-		place			: kor_location[i][0].place
+		place			: kor_location[i][0].place,
+		anchorSkew		: true
 	});
 	
 	markers.push(marker);
@@ -186,3 +187,45 @@ function updateMarkers(map, markers) {
 		if (!marker.getMap()) return;
 	}
 	
+
+let chk_geocode		= document.getElementById("chk-geocode");
+let si_name_val 	= document.getElementById("geocode-name");
+let input_geoCode 	= document.querySelector("#search-geocode");
+	input_geoCode.addEventListener('keyup', function() {
+	if(window.event.keyCode == 13) {
+		
+		let search_geocode_val = input_geoCode.value;
+
+		naver.maps.Service.geocode({
+			query: search_geocode_val
+		}, function(status, response) {
+			if (status !== naver.maps.Service.Status.OK) {
+				return alert('Something wrong!');
+			}
+		
+			var result = response.v2, // 검색 결과의 컨테이너
+				items = result.addresses; // 검색 결과의 배열
+				
+			// do Something
+
+			// 시 가져오기
+			try {
+				let str 	= items[0].roadAddress;
+				let si_name = str.split(' ');
+				si_name		= si_name[1];
+				console.log(items);
+				if(si_name == undefined || search_geocode_val.length <= 2) {
+					chk_geocode.innerText = "지번 혹은 도로명 주소를 정확하게 입력하세요.";
+				} else {
+					si_name_val.value 	= si_name;
+					chk_geocode.innerText = "확인되었습니다.";
+				}
+			} catch (error) {
+				chk_geocode.innerText = "주소를 정확하게 입력하세요.";
+
+			}
+		});
+	}else {
+	
+	}
+})
