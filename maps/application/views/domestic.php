@@ -1,9 +1,5 @@
 <?php
-    function aa() {
-        global $con;
-        echo $con;
-    }
-    aa();
+	include_once '../connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +57,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">지역 등록</h5>
+        <!-- <h5 class="modal-title" id="exampleModalLabel">지역 등록</h5> -->
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -86,8 +82,16 @@
             <input type="text" class="form-control" id="end-period">
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="stay-name" class="col-form-label">숙소이름(두 곳 이상은 ',')</label>
+            <input type="text" class="form-control" id="stay-name"></input>
+          </div>
+          <div class="mb-3">
+            <label for="visit-name" class="col-form-label">놀러간 장소(두 곳 이상은 ',')</label>
+            <input type="text" class="form-control" id="visit-name"></ㅅ>
+          </div>
+          <div class="mb-3">
+            <label for="total-review" class="col-form-label">총평</label>
+            <textarea class="form-control" id="total-review"></textarea>
           </div>
         </form>
       </div>
