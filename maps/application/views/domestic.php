@@ -78,8 +78,12 @@
             <!-- <button type="button" class="btn btn-info">Info</button> -->
           </div>
           <div class="mb-3">
-            <label for="period" class="col-form-label">기간</label>
-            <input type="text" class="form-control" id="period">
+            <label for="period" class="col-form-label">시작날짜(연월일-숫자)</label>
+            <input type="text" class="form-control" id="start-period">
+          </div>
+          <div class="mb-3">
+            <label for="period" class="col-form-label">종료날짜(연월일-숫자)</label>
+            <input type="text" class="form-control" id="end-period">
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Message:</label>
