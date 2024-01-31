@@ -49,6 +49,8 @@ let ne_lng = mapBounds._ne._lng; // 북동쪽 경도
 let sw_lat = mapBounds._sw._lat; // 남서쪽 위도
 let sw_lng = mapBounds._sw._lng; // 남서쪽 경도
 
+console.log(ne_lat);
+
 // 마커 좌표 (JSON 길이만큼 출력)
 for(i=0; i < kor_location.length; i++) {
 	let location_lat = kor_location[i][0].lat;
@@ -178,12 +180,10 @@ function updateMarkers(map, markers) {
 	
 	
 	function showMarker(map, marker) {
-		console.log(1);
 		if (marker.getMap()) return;
 	}
 	
 	function hideMarker(map, marker) {
-		console.log(2);
 		if (!marker.getMap()) return;
 	}
 	
@@ -213,12 +213,37 @@ let input_geoCode 	= document.querySelector("#search-geocode");
 				let str 	= items[0].roadAddress;
 				let si_name = str.split(' ');
 				si_name		= si_name[1];
+
+				let si_lng	= items[0].x;
+				let si_lat	= items[0].y;
+
 				console.log(items);
+				console.log(`경도 : ${si_lng}`);
+				console.log(`위도 : ${si_lat}`);
+
+
 				if(si_name == undefined || search_geocode_val.length <= 2) {
 					chk_geocode.innerText = "지번 혹은 도로명 주소를 정확하게 입력하세요.";
 				} else {
 					si_name_val.value 	= si_name;
 					chk_geocode.innerText = "확인되었습니다.";
+
+					const data = {
+						method: 'POST',
+						headers: {
+						  'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							lng : si_lng,
+							lat : si_lat
+						})
+					  };
+					  
+					  fetch('../../application/controllers/locationInsert.php', data)
+					  .then((res) => res.text())
+					  .then((data) => {
+						console.log(data);
+					  })
 				}
 			} catch (error) {
 				chk_geocode.innerText = "주소를 정확하게 입력하세요.";
