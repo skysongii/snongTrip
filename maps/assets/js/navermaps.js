@@ -190,6 +190,7 @@ function updateMarkers(map, markers) {
 
 let chk_geocode		= document.getElementById("chk-geocode");
 let si_name_val 	= document.getElementById("geocode-name");
+// let input_start		= document.getElementById("#")
 let input_geoCode 	= document.querySelector("#search-geocode");
 	input_geoCode.addEventListener('keyup', function() {
 	if(window.event.keyCode == 13) {
@@ -228,23 +229,28 @@ let input_geoCode 	= document.querySelector("#search-geocode");
 					si_name_val.value 	= si_name;
 					chk_geocode.innerText = "확인되었습니다.";
 
-					const data = {
-						method: 'POST',
-						headers: {
-						  'Content-Type': 'application/json'
-						},
-						body: JSON.stringify({
-							lng : si_lng,
-							lat : si_lat
-						})
-					  };
-					  
-					  fetch('../../application/controllers/locationInsert.php', data)
-					  .then((res) => res.text())
-					  .then((data) => {
-						console.log(data);
-					  })
 				}
+
+				const data = {
+					method: 'POST',
+					headers: {
+					  'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						si_name	: si_name,
+						lng 	: si_lng,
+						lat 	: si_lat,
+						
+					})
+				  };
+				  
+				  fetch('../../application/controllers/locationInsert.php', data)
+				  .then((res) => res.text())
+				  .then((data) => {
+					console.log(data);
+				  })
+
+
 			} catch (error) {
 				chk_geocode.innerText = "주소를 정확하게 입력하세요.";
 
