@@ -269,4 +269,5 @@ let input_geoCode 	= document.querySelector("#search-geocode");
 let chk_insert_val = document.getElementById("chk-insert-val");
 	chk_insert_val.addEventListener('click', function() {
 		console.log(geocode_name_val);	// 주소 체크
+		console.log();
 	})
