@@ -256,7 +256,7 @@ let input_geoCode 	= document.querySelector("#search-geocode");
 					})
 
 
-				} catch (error) {
+				} catch (error) {	// 틀린 주소
 					chk_geocode.innerText = "주소를 정확하게 입력하세요.";
 
 				}
