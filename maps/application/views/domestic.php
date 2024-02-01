@@ -97,11 +97,12 @@
       </div>
       <div class="modal-footer"> 
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-        <button type="button" class="btn btn-primary">등록</button>
+        <button type="button" id="chk-insert-val" class="btn btn-primary">등록</button>
       </div>
     </div>
   </div>
 </div>
+
 <!-- 모달 수정 -->
 <div class="modal fade" id="update-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
