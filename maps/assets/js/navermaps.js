@@ -6,8 +6,8 @@ let infowindows 		= new Array();
 let location_lat_arr	= [];
 let location_lng_arr	= [];
 
-/** 모달 등록 체크 */
-let insert_chk_val		= 0;
+/** 모달 체크 */
+let geocode_name_val	= 0;	// 주소
 
 /** 좌표 변수 선언 */
 let lat, lng; // 위도, 경도
@@ -196,8 +196,6 @@ let si_name_val 	= document.getElementById("geocode-name");
 // let input_start		= document.getElementById("#")
 let input_geoCode 	= document.querySelector("#search-geocode");
 
-let modal_insert_btn = () => {
-
 	input_geoCode.addEventListener('keyup', function() {
 		if(window.event.keyCode == 13) {
 			
@@ -231,11 +229,11 @@ let modal_insert_btn = () => {
 
 					if(si_name == undefined || search_geocode_val.length <= 2) {
 						chk_geocode.innerText 	= "지번 혹은 도로명 주소를 정확하게 입력하세요.";
-						insert_chk_val			= 0;
+						geocode_name_val		= 0;
 					} else {
 						si_name_val.value 		= si_name;
 						chk_geocode.innerText 	= "확인되었습니다.";
-						insert_chk_val			= 1;
+						geocode_name_val		= 1;
 					}
 
 					const data = {
@@ -267,4 +265,8 @@ let modal_insert_btn = () => {
 		
 		}
 	})
-}
+
+let chk_insert_val = document.getElementById("chk-insert-val");
+	chk_insert_val.addEventListener('click', function() {
+		console.log(geocode_name_val);
+	})
