@@ -256,7 +256,7 @@ let input_geoCode 	= document.querySelector("#search-geocode");
 					})
 
 
-				} catch (error) {
+				} catch (error) {	// 틀린 주소
 					chk_geocode.innerText = "주소를 정확하게 입력하세요.";
 
 				}
@@ -269,4 +269,5 @@ let input_geoCode 	= document.querySelector("#search-geocode");
 let chk_insert_val = document.getElementById("chk-insert-val");
 	chk_insert_val.addEventListener('click', function() {
 		console.log(geocode_name_val);	// 주소 체크
+		console.log();
 	})
