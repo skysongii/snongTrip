@@ -1,5 +1,5 @@
 <?php
-	include_once '../connect.php';
+	// include_once '../connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -73,13 +73,12 @@
             <input type="text" class="form-control" id="geocode-name" readonly>
             <!-- <button type="button" class="btn btn-info">Info</button> -->
           </div>
-          <div class="mb-3">
             <label for="period" class="col-form-label">시작날짜(연월일-숫자)</label>
-            <input type="text" class="form-control" id="start-period">
+            <input type="text" class="form-control" id="start-date">
           </div>
           <div class="mb-3">
             <label for="period" class="col-form-label">종료날짜(연월일-숫자)</label>
-            <input type="text" class="form-control" id="end-period">
+            <input type="text" class="form-control" id="end-date">
           </div>
           <div class="mb-3">
             <label for="stay-name" class="col-form-label">숙소이름(두 곳 이상은 ',')</label>
@@ -97,7 +96,7 @@
       </div>
       <div class="modal-footer"> 
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-        <button type="button" id="chk-insert-val" class="btn btn-primary">등록</button>
+        <button type="button" id="chk-insert-btn" class="btn btn-primary">등록</button>
       </div>
     </div>
   </div>
@@ -191,5 +190,5 @@
 </html>
 
 <script>
-
+  console.log('domestiasdca');
 </script>
