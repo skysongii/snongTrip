@@ -283,7 +283,7 @@ let locationChkFunc = () => {
 /**
  * @author	: csh
  * @date	: 2024-02-02
- * insertFnlChk - 등록 버튼 클릭 시 검증작업
+ * insertFnlChk - 등록 버튼 클릭 시 검증작업!
  * {
  * 	@location 	: 주소 0,1
  *  @start_date : 시작날짜 0,1
