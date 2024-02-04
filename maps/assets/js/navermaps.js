@@ -182,92 +182,122 @@ function updateMarkers(map, markers) {
 }
 	
 	
-	function showMarker(map, marker) {
-		if (marker.getMap()) return;
-	}
+function showMarker(map, marker) {
+	if (marker.getMap()) return;
+}
+
+function hideMarker(map, marker) {
+	if (!marker.getMap()) return;
+}
 	
-	function hideMarker(map, marker) {
-		if (!marker.getMap()) return;
+
+let chk_geocode		= document.getElementById("chk-geocode");	// 주소 정상여부 판단 - API
+let si_name_val 	= document.getElementById("geocode-name");	// 모달 창 시군구 자동출력칸
+let input_start		= document.getElementById("start-date");	// 모달 창 시작날짜
+let inpupt_end		= document.getElementById("end-date");		// 모달 창 종료날짜
+let input_geoCode 	= document.querySelector("#search-geocode");// 모달 창주소 입력칸
+let chk_insert_btn = document.getElementById("chk-insert-btn"); // 모달 창 등록 버튼
+
+
+
+input_geoCode.addEventListener("focusout", function() {
+	console.log(`focusout`);
+	locationChkFunc();
+});
+
+input_geoCode.addEventListener('keyup', function() {
+	if(window.EventTarget.keyCode == 13) {
+		locationChkFunc();
 	}
-	
+})
 
-let chk_geocode		= document.getElementById("chk-geocode");
-let si_name_val 	= document.getElementById("geocode-name");
-// let input_start		= document.getElementById("#")
-let input_geoCode 	= document.querySelector("#search-geocode");
+/**
+ * @author 	: csh
+ * @date	: 2024-02-02
+ * locationChkFunc - 주소입력 확인 함수
+ */
+let locationChkFunc = () => {
 
-	input_geoCode.addEventListener('keyup', function() {
-		if(window.event.keyCode == 13) {
-			
-			let search_geocode_val = input_geoCode.value;
+	let search_geocode_val = input_geoCode.value;
 
-			naver.maps.Service.geocode({
-				query: search_geocode_val
-			}, function(status, response) {
-				if (status !== naver.maps.Service.Status.OK) {
-					return alert('Something wrong!');
-				}
-			
-				var result = response.v2, // 검색 결과의 컨테이너
-					items = result.addresses; // 검색 결과의 배열
-					
-				// do Something
-
-				// 시 가져오기
-				try {
-					let str 	= items[0].roadAddress;			// 주소
-					let si_name = str.split(' ');				// 주소 공백 분리
-					si_name		= si_name[1];					// 시군구
-
-					let si_lng	= items[0].x;					// 경도
-					let si_lat	= items[0].y;					// 위도
-
-					console.log(items);
-					console.log(`경도 : ${si_lng}`);
-					console.log(`위도 : ${si_lat}`);
-
-
-					if(si_name == undefined || search_geocode_val.length <= 2) {
-						chk_geocode.innerText 	= "지번 혹은 도로명 주소를 정확하게 입력하세요.";
-						geocode_name_val		= 0;
-					} else {
-						si_name_val.value 		= si_name;
-						chk_geocode.innerText 	= "확인되었습니다.";
-						geocode_name_val		= 1;
-					}
-
-					const data = {
-						method: 'POST',
-						headers: {
-						'Content-Type': 'application/json'
-						},
-						body: JSON.stringify({
-							si_name	: si_name,
-							lng 	: si_lng,
-							lat 	: si_lat,
-							
-						})
-					};
-					
-					fetch('../../application/controllers/locationInsert.php', data)
-					.then((res) => res.text())
-					.then((data) => {
-						console.log(`data : ${data}`);
-					})
-
-
-				} catch (error) {	// 틀린 주소
-					chk_geocode.innerText = "주소를 정확하게 입력하세요.";
-
-				}
-			});
-		}else {
-		
+	naver.maps.Service.geocode({
+		query: search_geocode_val
+	}, function(status, response) {
+		if (status !== naver.maps.Service.Status.OK) {
+			return alert('Something wrong!');
 		}
-	})
+	
+		var result = response.v2, // 검색 결과의 컨테이너
+			items = result.addresses; // 검색 결과의 배열
+			
+		// 시 가져오기
+		try {
+			let str 	= items[0].roadAddress;			// 주소
+			let si_name = str.split(' ');				// 주소 공백 분리
+			si_name		= si_name[1];					// 시군구
 
-let chk_insert_val = document.getElementById("chk-insert-val");
-	chk_insert_val.addEventListener('click', function() {
+			let si_lng	= items[0].x;					// 경도
+			let si_lat	= items[0].y;					// 위도
+
+			// console.log(items);
+			// console.log(`경도 : ${si_lng}`);
+			// console.log(`위도 : ${si_lat}`);
+
+			if(si_name == undefined || search_geocode_val.length <= 2) {
+				chk_geocode.innerText 	= "지번 혹은 도로명 주소를 정확하게 입력하세요.";
+				geocode_name_val		= 0;
+			} else {
+				si_name_val.value 		= si_name;
+				chk_geocode.innerText 	= "확인되었습니다.";
+				geocode_name_val		= 1;
+			}
+
+			const data = {
+				method: 'POST',
+				headers: {
+				'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					si_name	: si_name,
+					lng 	: si_lng,
+					lat 	: si_lat,
+					
+				})
+			};
+			
+			fetch('../../application/controllers/locationInsert.php', data)
+			.then((res) => res.text())
+			.then((data) => {
+				console.log(`data : ${data}`);
+			})
+
+
+		} catch (error) {	// 틀린 주소
+			chk_geocode.innerText = "주소를 정확하게 입력하세요.";
+			geocode_name_val = 0;
+		}
+
+		console.log(`주소 확인 값 : ${geocode_name_val}`)
+	});
+}
+/**
+ * @author	: csh
+ * @date	: 2024-02-02
+ * insertFnlChk - 등록 버튼 클릭 시 확인
+ * {
+ * 	@location 	: 주소 0,1
+ *  @start_date : 시작날짜 0,1
+ *  @end_date	: 종료날짜 0,1
+ *  @stay		: 숙소 0,1
+ *  @visit		: 방문장소 0,1
+ * 	@review		: 총평 0,1 
+ * }
+ */
+const insertFnlChk = (location, start_date, end_date, stay, visit, review) => {
+
+}
+
+	chk_insert_btn.addEventListener('click', function() {
 		console.log(geocode_name_val);	// 주소 체크
-		// console.log(casdsadddhk_geocode);
+		console.log(input_start.value);
 	})
